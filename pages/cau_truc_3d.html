@@ -1,0 +1,299 @@
+<div data-role="page">
+  <style>
+  .ui-selectmenu .ui-selectmenu-list li .ui-btn.ui-btn-active {
+    color: #F44336
+  }
+  </style>
+  <div class="navbar red">
+    <div class="navbar-inner">
+      <div class="left">
+        <a href="#" class="link" data-rel="back"><i class="material-icons">arrow_back</i></a>
+      </div>
+      <div class="title">Cấu trúc 3d của phân tử hữu cơ</div>
+    </div>
+  </div>
+  <div class="ui-content" role="main">
+    <div class="row">
+      <div class="col-50">
+        <label>Phân tử</label>
+        <select data-native-menu="false" id="a" data-icon="false">
+          <option value="0">Methane</option>
+          <option value="1">Ethane</option>
+          <option value="2">Propane</option>
+          <option value="3">Butane</option>
+          <option value="4">Pentane</option>
+          <option value="5">Hexane</option>
+          <option value="6">Heptane</option>
+          <option value="7">Octane</option>
+          <option value="8">Ethene</option>
+          <option value="9">Propene</option>
+          <option value="10">Butene</option>
+          <option value="11">Pentene</option>
+          <option value="12">Hexene</option>
+          <option value="13">Heptene</option>
+          <option value="14">Octene</option>
+          <option value="15">Nonene</option>
+          <option value="16">Propyne</option>
+          <option value="17">Butine</option>
+          <option value="18">Pentyne</option>
+          <option value="19">Hexyne</option>
+          <option value="20">Heptyne</option>
+          <option value="21">Octyne</option>
+          <option value="22">Nonyne</option>
+          <option value="23">Benzene</option>
+          <option value="24">Toluene</option>
+          <option value="25">o-Xylene</option>
+          <option value="26">m-Xylene</option>
+          <option value="27">p-Xylene</option>
+          <option value="28">Ethylbenzene</option>
+          <option value="29">Mesitylene</option>
+          <option value="30">Cumene</option>
+          <option value="31">Naphthalene</option>
+          <option value="32">Durene</option>
+          <option value="33">Anthracene</option>
+          <option value="34">Cyclobutadiene</option>
+          <option value="35">Ferrocene</option>
+          <option value="36">Pyrrole</option>
+          <option value="37">Furan</option>
+          <option value="38">Thiophene</option>
+          <option value="39">Cyclooctotetraene</option>
+          <option value="40">Azulene</option>
+          <option value="41">Pyridin THPO</option>
+          <option value="42">Ethyl formate</option>
+          <option value="43">Ethyl acetate</option>
+          <option value="44">Amyl acetate</option>
+          <option value="45">Vanillin</option>
+          <option value="46">Citral</option>
+          <option value="47">Raspberry ketone</option>
+          <option value="48">Ethylvanillin</option>
+          <option value="49">Ionone</option>
+          <option value="50">Xylose</option>
+          <option value="51">Glucose</option>
+          <option value="52">Fructose</option>
+          <option value="53">Galactose</option>
+          <option value="54">Mannose</option>
+          <option value="55">Cellulose</option>
+          <option value="56">Maltose</option>
+          <option value="57">Isomaltose</option>
+          <option value="58">Lactose</option>
+          <option value="59">Lactulose</option>
+          <option value="60">Sucrose</option>
+          <option value="61">Chondroitin sulphate</option>
+          <option value="62">beta Heparin</option>
+          <option value="63">Dermatan sulphate</option>
+          <option value="64">Raffinose</option>
+          <option value="65">Dextrin</option>
+          <option value="66">Heparan sulfate</option>
+          <option value="67">Glycogen</option>
+          <option value="68">Glucomannan</option>
+          <option value="69">Formic acid</option>
+          <option value="70">Acetic acid</option>
+          <option value="71">Propionic acid</option>
+          <option value="72">Butyric acid</option>
+          <option value="73">Valeric acid</option>
+          <option value="74">Caproic acid</option>
+          <option value="75">Enanthic acid</option>
+          <option value="76">Caprylic acid</option>
+          <option value="77">Pelargonic acid</option>
+          <option value="78">Pp</option>
+          <option value="79">N</option>
+          <option value="80">M</option>
+          <option value="81">K1</option>
+          <option value="82">D4</option>
+          <option value="83">D2</option>
+          <option value="84">B15</option>
+          <option value="85">B13</option>
+          <option value="86">B7</option>
+          <option value="87">B6</option>
+          <option value="88">B5</option>
+          <option value="89">B4</option>
+          <option value="90">A2</option>
+          <option value="91">A</option>
+          <option value="92">Vinyl chloride</option>
+          <option value="93">Soman</option>
+          <option value="94">Prussic acid</option>
+          <option value="95">Hexachloran</option>
+          <option value="96">Benzpyrene</option>
+          <option value="97">Acrolein</option>
+          <option value="98">Terpenoid pinene</option>
+          <option value="99">Terpenoid menthol</option>
+          <option value="100">Terpenoid limonene</option>
+          <option value="101">Terpenoid carvone</option>
+          <option value="102">Terpenoid carotene</option>
+          <option value="103">Terpenoid camphor</option>
+          <option value="104">Terpenoid borneol</option>
+          <option value="105">Xylitol</option>
+          <option value="106">Trimethyl carbinol</option>
+          <option value="107">Propargyl alcohol</option>
+          <option value="108">Phenethyl alcohol</option>
+          <option value="109">Oleyl alcohol</option>
+          <option value="110">Octanol</option>
+          <option value="111">Methanol</option>
+          <option value="112">Isoamyl alcohol</option>
+          <option value="113">Glycerol</option>
+          <option value="114">Furfuryl alcohol</option>
+          <option value="115">Ethylene glycol</option>
+          <option value="116">Ethanol</option>
+          <option value="117">Cyclohexanol</option>
+          <option value="118">Benzyl alcohol</option>
+          <option value="119">Allyl alcohol</option>
+          <option value="120">1 butanol</option>
+          <option value="121">Yellow 7</option>
+          <option value="122">Yellow 3</option>
+          <option value="123">Tetrachloromethane</option>
+          <option value="124">Sudan red 7b</option>
+          <option value="125">Sudan i</option>
+          <option value="126">Sudan blue</option>
+          <option value="127">Scarlet sed</option>
+          <option value="128">Red 80</option>
+          <option value="129">Red 48</option>
+          <option value="130">Red 43</option>
+          <option value="131">Red 41</option>
+          <option value="132">Red 23</option>
+          <option value="133">Red 1</option>
+          <option value="134">Orange 15</option>
+          <option value="135">Green 7</option>
+          <option value="136">Green 3</option>
+          <option value="137">Blue 36</option>
+          <option value="138">Blue 35</option>
+          <option value="139">Blue 23</option>
+          <option value="140">Blue 18</option>
+          <option value="141">Protohemochrome</option>
+          <option value="142">Sernyl</option>
+          <option value="143">Nicotine</option>
+          <option value="144">Methamphetamine</option>
+          <option value="145">Mdma</option>
+          <option value="146">Levodopa</option>
+          <option value="147">Ketamine</option>
+          <option value="148">Ibotenic acid</option>
+          <option value="149">Ephedrin</option>
+          <option value="150">Dizocilpine</option>
+          <option value="151">Dextromethorphan</option>
+          <option value="152">Dextroamphetamine</option>
+          <option value="153">Cathinone</option>
+          <option value="154">Bicuculline</option>
+          <option value="155">Amphetamine</option>
+          <option value="156">Undecylic acid</option>
+          <option value="157">Tridecanoic acid</option>
+          <option value="158">Pentadecanoic acid</option>
+          <option value="159">Palmitic acid</option>
+          <option value="160">Myristic acid</option>
+          <option value="161">Margaric acid</option>
+          <option value="162">Lauric acid</option>
+          <option value="163">Capric acid</option>
+          <option value="164">Wedelolactone</option>
+          <option value="165">Testolactone</option>
+          <option value="166">Spironolactone</option>
+          <option value="167">Isoalantolactone</option>
+          <option value="168">Gluconolactone</option>
+          <option value="169">Gamma valerolactone</option>
+          <option value="170">Dehydrocostus</option>
+          <option value="171">Coumarin</option>
+          <option value="172">Alantolactone</option>
+          <option value="173">2 oxetanone</option>
+          <option value="174">Thromboxane b2</option>
+          <option value="175">Thromboxane a2</option>
+          <option value="176">Melatonin</option>
+          <option value="177">Inhibin</option>
+          <option value="178">Estriol</option>
+          <option value="179">Androstenedione</option>
+          <option value="180">Androstenediol</option>
+          <option value="181">Fullerene c60 monoadduct</option>
+          <option value="182">Fullerene a c60</option>
+          <option value="183">Fullerene</option>
+          <option value="184">Trotyl</option>
+          <option value="185">Tetryl</option>
+          <option value="186">Tetrazene</option>
+          <option value="187">Sex</option>
+          <option value="188">Pyx</option>
+          <option value="189">Petn</option>
+          <option value="190">Octogene</option>
+          <option value="191">Nitromethane</option>
+          <option value="192">Nitroglycol</option>
+          <option value="193">Nitroglycerine</option>
+          <option value="194">Methane</option>
+          <option value="195">Hexyl</option>
+          <option value="196">Hexogen</option>
+          <option value="197">Dina</option>
+          <option value="198">Ammonium picrate</option>
+          <option value="199">1 nitronaphthalene</option>
+          <option value="200">Valdecoxib</option>
+          <option value="201">Tetracycline 2</option>
+          <option value="202">Rofecoxib</option>
+          <option value="203">Piroxicam</option>
+          <option value="204">Penicillin g</option>
+          <option value="205">Parecoxib</option>
+          <option value="206">Naproxen</option>
+          <option value="207">Ketoprofen</option>
+          <option value="208">Indometacin</option>
+          <option value="209">Ibuprofen</option>
+          <option value="210">Flurbiprofen</option>
+          <option value="211">Etoricoxib</option>
+          <option value="212">Diflucan</option>
+          <option value="213">Diethyl ether</option>
+          <option value="214">Diclofenac</option>
+          <option value="215">Celebra</option>
+          <option value="216">Amidopyrine</option>
+          <option value="217">Terephthalic acid</option>
+          <option value="218">Succinic acid</option>
+          <option value="219">Sebacic acid</option>
+          <option value="220">Phthalic acid</option>
+          <option value="221">Oxalic acid</option>
+          <option value="222">Octanedioic acid</option>
+          <option value="223">Malonic acid</option>
+          <option value="224">Isophthalic acid</option>
+          <option value="225">Heptanedioic acid</option>
+          <option value="226">Glutaric acid</option>
+          <option value="227">Azelaic acid</option>
+          <option value="228">Adipic acid</option>
+        </select>
+      </div>
+      <div class="col-50">
+        <label>Kiểu</label>
+        <select data-native-menu="false" id="b" data-icon="false">
+          <option value="Ball and Stick">Ball and Stick</option>
+          <option value="Stick">Stick</option>
+          <option value="van der Waals Spheres">van der Waals Spheres</option>
+          <option value="Wireframe">Wireframe</option>
+          <option value="Line">Line</option>
+        </select>
+      </div>
+    </div>
+    <div class="card center overflow">
+      <canvas class="ChemDoodleWebComponent" id="ball" height="500px"></canvas>
+    </div>
+  </div>
+  <script>
+  $.getScript('../js/chem.js', function() {
+    $.getJSON("../data/ele_3d.json", function(data) {
+      let name = a.value;
+      let select = b.value;
+      let ball = new ChemDoodle.TransformCanvas3D('ball', window.innerWidth - 56, window.innerHeight - 185);
+      ball.specs.set3DRepresentation(select);
+      ball.specs.backgroundColor = 'white';
+      let molFile = data[name];
+      let molecule = ChemDoodle.readMOL(molFile, 1);
+      ball.loadMolecule(molecule);
+      b.onchange = function() {
+        name = a.value;
+        select = b.value;
+        ball.specs.set3DRepresentation(select);
+        ball.specs.backgroundColor = 'white';
+        molFile = data[name];
+        molecule = ChemDoodle.readMOL(molFile, 1);
+        ball.loadMolecule(molecule);
+      }
+      a.onchange = function() {
+        name = a.value;
+        select = b.value;
+        ball.specs.set3DRepresentation(select);
+        ball.specs.backgroundColor = 'white';
+        molFile = data[name];
+        molecule = ChemDoodle.readMOL(molFile, 1);
+        ball.loadMolecule(molecule);
+      }
+
+    });
+  })
+  </script>
+</div>

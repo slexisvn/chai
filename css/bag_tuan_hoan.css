@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  width: 1110px;
+  margin: 30px auto;
+  position: relative;
+}
+
+.main:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.main li {
+  list-style: none;
+  width: 56px;
+  height: 60px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  position: relative;
+  font-size: 18px;
+  float: left;
+  padding: 0 2px;
+  margin: 1px;
+  cursor: pointer;
+  padding-top: 20px;
+  overflow: hidden;
+  text-shadow: none;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+}
+
+.main li span {
+  display: block;
+  line-height: 1;
+  font-size: 9px;
+  color: black;
+  padding-top: 1px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.main .empty {
+  border: none;
+  box-shadow: none;
+  cursor: default;
+  text-align: center;
+}
+
+.deactivate {
+  opacity: 0.5;
+  -webkit-filter: grayscale(70%);
+  filter: grayscale(70%);
+}
+
+.main li:before,
+.main li:after {
+  content: attr(data-pos);
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  color: black;
+  font-size: 8px;
+  line-height: 1;
+}
+
+.main li:after {
+  content: attr(data-nb);
+  left: auto;
+  right: 3px;
+}
+
+.type-0 {
+  background: #d9e021;
+}
+
+.type-1 {
+  background: #f49751;
+}
+
+.type-2 {
+  background: #8cc63f;
+}
+
+.type-3 {
+  background: #F8B707;
+}
+
+.type-4 {
+  background: #f3f300;
+}
+
+.type-5 {
+  background: #3bd93b;
+}
+
+.type-6 {
+  background: #c69c6d;
+}
+
+.type-7 {
+  background: #4CAFFA;
+}
+
+.type-8 {
+  background: #f9aeb1;
+}
+
+.type-9 {
+  background: #c7b299;
+}
+
+.type-10 {
+  background: #d9d9d9;
+}
+
+.legend {
+  position: absolute;
+  top: 10%;
+  left: 17%;
+  padding: 10px;
+}
+
+.legend:after {
+  content: "";
+  display: table-row;
+  clear: table;
+}
+
+.legend ul {
+  float: left;
+  list-style: none;
+}
+
+.legend .note {
+  width: 500px;
+}
+
+.legend .note li {
+  margin: 2px;
+  padding: 3px;
+  float: left;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  width: 32.5%;
+  cursor: pointer;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+th,
+td {
+  padding: 10px;
+}
+
+h3 {
+  font-size: 20px;
+  margin-bottom: 10px
+}

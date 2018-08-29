@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chai − Bộ sưu tập các công cụ và công thức Hóa học</title>
+  <link rel="stylesheet" href="css/jqm.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/color.css">
+  <link rel="stylesheet" href="css/katex.css">
+</head>
+
+<body>
+  <div data-role="page" class="page-with-subnavbar">
+    <div class="navbar animatedColor">
+      <div class="navbar-inner">
+        <div class="title">Chai</div>
+        <div class="right">
+          <a href="pages/docs.html" class="link"><i class="material-icons">help_outline</i></a>
+          <a href="pages/info.html" class="link"><i class="material-icons">info_outline</i></a>
+        </div>
+        <div class="subnavbar">
+          <form class="searchbar">
+            <div class="searchbar-inner">
+              <div class="searchbar-input-wrap">
+                <input type="text" placeholder="Tìm công cụ" data-clear-btn="true" oninput="filter_tools()" id="search_key" />
+                <span class="searchbar-icon"><i class="material-icons">search</i></span>
+              </div>
+              <span class="searchbar-disable-button"><i class="material-icons">arrow_back</i></span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="ui-content">
+      <div class="row" style="margin:4px -4px">
+        <div class="col">
+          <div class="card center"><a href="pages/khoi_luong_mol.html"><img src="icon/khoi_luong_mol.svg" /><span>Tính khối lượng mol</span></a></div>
+        </div>
+        <div class="col">
+          <div class="card center"><a href="pages/can_bang_hoa_hoc.html"><img src="icon/can_bang_hoa_hoc.svg" /><span>Cân bằng phản ứng hóa học</span></a></div>
+        </div>
+        <div class="col">
+          <div class="card center"><a href="pages/chuoi_phuong_trinh.html"><img src="icon/chuoi.svg" /><span>Giải chuỗi phương trình hóa học</span></a></div>
+        </div>
+        <div class="col">
+          <div class="card center"><a href="pages/bag_tinh_tan.html"><img src="icon/bang_tinh_tan.svg" /><span>Bảng tính tan</span></a></div>
+        </div>
+        <div class="col">
+          <div class="card center"><a href="pages/bag_tuan_hoan.html"><img src="icon/bang_tuan_hoan.svg" /><span>Bảng tuần hoàn hóa học</span></a></div>
+        </div>
+        <div class="col">
+          <div class="card center"><a href="pages/tu_dien_hoa_hoc.html"><img src="icon/tu_dien.svg" /><span>Từ điển phương trình hóa học</span></a></div>
+        </div>
+        <div class="col">
+          <div class="card center"><a href="pages/cau_truc_2d.html"><img src="icon/molecule_2d.svg" /><span>Cấu trúc 2d của phân tử hữu cơ</span></a></div>
+        </div>
+        <div class="col">
+          <div class="card center"><a href="pages/cau_truc_3d.html"><img src="icon/molecule_3d.svg" /><span>Cấu trúc 3d của phân tử hữu cơ</span></a></div>
+        </div>
+        <div class="col">
+          <div class="card center"><a href="#" id="DDH-btn"><img src="icon/day_dien_hoa.svg" /><span>Dãy điện hóa kim loại</span></a></div>
+        </div>
+        <div class="col">
+          <div class="card center"><a href="pages/danh_van.html"><img src="icon/danh_van.svg" /><span>Đánh vần với nguyên tố</span></a></div>
+        </div>
+      </div>
+      <div class="card overflow" id="day_dien_hoa" style="display:none">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr class="element">
+            <td><span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.771331em;"></span><span class="strut bottom" style="height: 1.02133em; vertical-align: -0.25em;"></span><span class="base"><span class="mord"><span style="margin-right: 0.07153em;" class="mord mathit">K</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.771331em;"><span class="" style="top: -3.063em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span><span class="mord mathrm">/</span><span style="margin-right: 0.07153em;" class="mord mathit">K</span></span></span></span></span></td>
+            <td><span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.771331em;"></span><span class="strut bottom" style="height: 1.02133em; vertical-align: -0.25em;"></span><span class="base"><span style="margin-right: 0.10903em;" class="mord mathit">N</span><span class="mord"><span class="mord mathit">a</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.771331em;"><span class="" style="top: -3.063em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span><span class="mord mathrm">/</span><span style="margin-right: 0.10903em;" class="mord mathit">N</span><span class="mord mathit">a</span></span></span></span></span></td>
+            <td><span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.814108em;"></span><span class="strut bottom" style="height: 1.06411em; vertical-align: -0.25em;"></span><span class="base"><span style="margin-right: 0.10903em;" class="mord mathit">M</span><span class="mord"><span style="margin-right: 0.03588em;" class="mord mathit">g</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.814108em;"><span class="" style="top: -3.063em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathrm mtight">2</span><span class="mord mtight">+</span></span></span></span></span></span></span></span></span><span class="mord mathrm">/</span><span style="margin-right: 0.10903em;" class="mord mathit">M</span><span style="margin-right: 0.03588em;" class="mord mathit">g</span></span></span></span></span></td>
+            <td><span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.814108em;"></span><span class="strut bottom" style="height: 1.06411em; vertical-align: -0.25em;"></span><span class="base"><span class="mord mathit">A</span><span class="mord"><span style="margin-right: 0.01968em;" class="mord mathit">l</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.814108em;"><span class="" style="top: -3.063em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathrm mtight">3</span><span class="mord mtight">+</span></span></span></span></span></span></span></span></span><span class="mord mathrm">/</span><span class="mord mathit">A</span><span style="margin-right: 0.01968em;" class="mord mathit">l</span></span></span></span></span></td>
+            <td><span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.814108em;"></span><span class="strut bottom" style="height: 1.06411em; vertical-align: -0.25em;"></span><span class="base"><span style="margin-right: 0.07153em;" class="mord mathit">Z</span><span class="mord"><span class="mord mathit">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.814108em;"><span class="" style="top: -3.063em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathrm mtight">2</span><span class="mord mtight">+</span></span></span></span></span></span></span></span></span><span class="mord mathrm">/</span><span style="margin-right: 0.07153em;" class="mord mathit">Z</span><span class="mord mathit">n</span></span></span></span></span></td>
+            <td><span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.814108em;"></span><span class="strut bottom" style="height: 1.06411em; vertical-align: -0.25em;"></span><span class="base"><span style="margin-right: 0.13889em;" class="mord mathit">F</span><span class="mord"><span class="mord mathit">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.814108em;"><span class="" style="top: -3.063em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathrm mtight">2</span><span class="mord mtight">+</span></span></span></span></span></span></span></span></span><span class="mord mathrm">/</span><span style="margin-right: 0.13889em;" class="mord mathit">F</span><span class="mord mathit">e</span></span></span></span></span></td>
+            <td><span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.814108em;"></span><span class="strut bottom" style="height: 1.06411em; vertical-align: -0.25em;"></span><span class="base"><span style="margin-right: 0.10903em;" class="mord mathit">N</span><span class="mord"><span class="mord mathit">i</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.814108em;"><span class="" style="top: -3.063em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathrm mtight">2</span><span class="mord mtight">+</span></span></span></span></span></span></span></span></span><span class="mord mathrm">/</span><span style="margin-right: 0.10903em;" class="mord mathit">N</span><span class="mord mathit">i</span></span></span></span></span></td>
+            <td><span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.814108em;"></span><span class="strut bottom" style="height: 1.06411em; vertical-align: -0.25em;"></span><span class="base"><span style="margin-right: 0.05764em;" class="mord mathit">S</span><span class="mord"><span class="mord mathit">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.814108em;"><span class="" style="top: -3.063em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathrm mtight">2</span><span class="mord mtight">+</span></span></span></span></span></span></span></span></span><span class="mord mathrm">/</span><span style="margin-right: 0.05764em;" class="mord mathit">S</span><span class="mord mathit">n</span></span></span></span></span></td>
+            <td><span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.814108em;"></span><span class="strut bottom" style="height: 1.06411em; vertical-align: -0.25em;"></span><span class="base"><span style="margin-right: 0.13889em;" class="mord mathit">P</span><span class="mord"><span class="mord mathit">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.814108em;"><span class="" style="top: -3.063em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathrm mtight">2</span><span class="mord mtight">+</span></span></span></span></span></span></span></span></span><span class="mord mathrm">/</span><span style="margin-right: 0.13889em;" class="mord mathit">P</span><span class="mord mathit">b</span></span></span></span></span></td>
+            <td><span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.771331em;"></span><span class="strut bottom" style="height: 1.02133em; vertical-align: -0.25em;"></span><span class="base"><span class="mord mathrm">2</span><span class="mord"><span style="margin-right: 0.08125em;" class="mord mathit">H</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.771331em;"><span class="" style="top: -3.063em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span><span class="mord mathrm">/</span><span style="margin-right: 0.08125em;" class="mord mathit">H</span></span></span></span></span></td>
+            <td><span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.814108em;"></span><span class="strut bottom" style="height: 1.06411em; vertical-align: -0.25em;"></span><span class="base"><span style="margin-right: 0.07153em;" class="mord mathit">C</span><span class="mord"><span class="mord mathit">u</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.814108em;"><span class="" style="top: -3.063em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathrm mtight">2</span><span class="mord mtight">+</span></span></span></span></span></span></span></span></span><span class="mord mathrm">/</span><span style="margin-right: 0.07153em;" class="mord mathit">C</span><span class="mord mathit">u</span></span></span></span></span></td>
+            <td><span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.771331em;"></span><span class="strut bottom" style="height: 1.02133em; vertical-align: -0.25em;"></span><span class="base"><span class="mord mathit">A</span><span class="mord"><span style="margin-right: 0.03588em;" class="mord mathit">g</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.771331em;"><span class="" style="top: -3.063em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span><span class="mord mathrm">/</span><span class="mord mathit">A</span><span style="margin-right: 0.03588em;" class="mord mathit">g</span></span></span></span></span></td>
+            <td><span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.814108em;"></span><span class="strut bottom" style="height: 1.06411em; vertical-align: -0.25em;"></span><span class="base"><span class="mord mathit">A</span><span class="mord"><span class="mord mathit">u</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.814108em;"><span class="" style="top: -3.063em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathrm mtight">3</span><span class="mord mtight">+</span></span></span></span></span></span></span></span></span><span class="mord mathrm">/</span><span class="mord mathit">A</span><span class="mord mathit">u</span></span></span></span></span></td>
+          </tr>
+          <tr class="value">
+            <td><span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.64444em;"></span><span class="strut bottom" style="height: 0.83888em; vertical-align: -0.19444em;"></span><span class="base"><span class="mord">−</span><span class="mord mathrm">2</span><span class="mpunct">,</span><span class="mord mathrm">9</span><span class="mord mathrm">3</span></span></span></span></span></td>
+            <td><span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.64444em;"></span><span class="strut bottom" style="height: 0.83888em; vertical-align: -0.19444em;"></span><span class="base"><span class="mord">−</span><span class="mord mathrm">2</span><span class="mpunct">,</span><span class="mord mathrm">7</span><span class="mord mathrm">1</span></span></span></span></span></td>
+            <td><span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.64444em;"></span><span class="strut bottom" style="height: 0.83888em; vertical-align: -0.19444em;"></span><span class="base"><span class="mord">−</span><span class="mord mathrm">2</span><span class="mpunct">,</span><span class="mord mathrm">3</span><span class="mord mathrm">7</span></span></span></span></span></td>
+            <td><span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.64444em;"></span><span class="strut bottom" style="height: 0.83888em; vertical-align: -0.19444em;"></span><span class="base"><span class="mord">−</span><span class="mord mathrm">1</span><span class="mpunct">,</span><span class="mord mathrm">6</span><span class="mord mathrm">6</span></span></span></span></span></td>
+            <td><span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.64444em;"></span><span class="strut bottom" style="height: 0.83888em; vertical-align: -0.19444em;"></span><span class="base"><span class="mord">−</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathrm">7</span><span class="mord mathrm">6</span></span></span></span></span></td>
+            <td><span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.64444em;"></span><span class="strut bottom" style="height: 0.83888em; vertical-align: -0.19444em;"></span><span class="base"><span class="mord">−</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathrm">4</span><span class="mord mathrm">4</span></span></span></span></span></td>
+            <td><span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.64444em;"></span><span class="strut bottom" style="height: 0.83888em; vertical-align: -0.19444em;"></span><span class="base"><span class="mord">−</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathrm">2</span><span class="mord mathrm">6</span></span></span></span></span></td>
+            <td><span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.64444em;"></span><span class="strut bottom" style="height: 0.83888em; vertical-align: -0.19444em;"></span><span class="base"><span class="mord">−</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathrm">1</span><span class="mord mathrm">4</span></span></span></span></span></td>
+            <td><span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.64444em;"></span><span class="strut bottom" style="height: 0.83888em; vertical-align: -0.19444em;"></span><span class="base"><span class="mord">−</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathrm">1</span><span class="mord mathrm">3</span></span></span></span></span></td>
+            <td><span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.64444em;"></span><span class="strut bottom" style="height: 0.83888em; vertical-align: -0.19444em;"></span><span class="base"><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathrm">0</span><span class="mord mathrm">0</span></span></span></span></span></td>
+            <td><span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.64444em;"></span><span class="strut bottom" style="height: 0.83888em; vertical-align: -0.19444em;"></span><span class="base"><span class="mord">+</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathrm">3</span><span class="mord mathrm">4</span></span></span></span></span></td>
+            <td><span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.64444em;"></span><span class="strut bottom" style="height: 0.83888em; vertical-align: -0.19444em;"></span><span class="base"><span class="mord">+</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathrm">8</span><span class="mord mathrm">0</span></span></span></span></span></td>
+            <td><span><span class="katex"><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.64444em;"></span><span class="strut bottom" style="height: 0.83888em; vertical-align: -0.19444em;"></span><span class="base"><span class="mord">+</span><span class="mord mathrm">1</span><span class="mpunct">,</span><span class="mord mathrm">5</span><span class="mord mathrm">0</span></span></span></span></span></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="cordova.js"></script>
+  <script src="js/jqm.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

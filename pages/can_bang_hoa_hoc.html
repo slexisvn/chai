@@ -1,0 +1,36 @@
+<div data-role="page">
+  <div class="navbar indigo">
+    <div class="navbar-inner">
+      <div class="left">
+        <a href="#" class="link" data-rel="back"><i class="material-icons">arrow_back</i></a>
+      </div>
+      <div class="title">Cân bằng phản ứng hóa học</div>
+    </div>
+  </div>
+  <div class="ui-content">
+    <div class="card">
+      <label>Nhập phương trình hóa học</label>
+      <input type="text" placeholder="O2+H^++I^-=I2+H2O" id="input" data-clear-btn="true" />
+    </div>
+    <button class="button indigo">Cân bằng</button>
+    <div class="card">
+      <div class="overflow">
+        <div id="output"><span class="katex-display katex">&nbsp;</span></div>
+      </div>
+    </div>
+    <span id="message" class="no-text"></span>
+    <code id="codeOutput" class="no-text"></code>
+  </div>
+  <script>
+  $.getScript("../js/katex.js", function() {
+    $.getScript("../js/balance.js", function() {
+      $('.button').click(function() {
+        output.innerHTML = katex.renderToString(balance(input.value), {
+          displayMode: true
+        });
+        return false;
+      }).rkmd_rippleEffect();
+    })
+  })
+  </script>
+</div>

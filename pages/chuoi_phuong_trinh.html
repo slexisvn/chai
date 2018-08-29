@@ -1,0 +1,89 @@
+<div data-role="page">
+  <div class="navbar blue">
+    <div class="navbar-inner">
+      <div class="left">
+        <a href="#" class="link" data-rel="back"><i class="material-icons">arrow_back</i></a>
+      </div>
+      <div class="title">Giải chuỗi phương trình hóa học</div>
+    </div>
+  </div>
+  <div class="ui-content">
+    <div class="card">
+      <label>Nhập chuỗi phương trình</label>
+      <input type="text" placeholder="S SO2 SO3 H2SO4" id="input" data-clear-btn="true" />
+    </div>
+    <button class="button blue">Giải</button>
+    <div class="card">
+      <div class="overflow">
+        <div id="output"><span class="katex-display katex">&nbsp;</span></div>
+      </div>
+    </div>
+  </div>
+  <script>
+  $.getScript("../js/katex.js", function() {
+    $.getJSON("../data/eq.json", function(data) {
+      function sub(str) {
+        let result = '';
+        for (let i = 0; i < str.length; i++) {
+          if (isNaN(str.charAt(i))) {
+            result += str.charAt(i);
+          } else {
+            result += `_{${str.charAt(i)}}`;
+          }
+        }
+        return result;
+      }
+
+      function check(str, a) {
+        let s = str.split(' ');
+        let result = '';
+        let i = 0;
+        while (i < s.length) {
+          if (s[i].charAt(s[i].length - 1) === '.') {
+            if (a === s[i + 1]) {
+              result += `\\textcolor{red}{${s[i].replace('.', '')}${sub(s[i + 1])}}`;
+            } else {
+              result += s[i].replace('.', '') + sub(s[i + 1]);
+            }
+            i += 2;
+          } else {
+            if (a === s[i]) {
+              result += `\\textcolor{red}{${sub(s[i])}}`;
+            } else {
+              result += sub(s[i]);
+            }
+            i++;
+          }
+          if (i < s.length) {
+            result += '+';
+          }
+        }
+        return result;
+      }
+
+      $('.button').click(function() {
+        let a_arr = input.value.split(' ');
+        let html = '\\begin{array}{l}';
+        let reac, prod, r = 0;
+        let p = 1;
+        for (let j = 0; j < a_arr.length - 1; j++) {
+          for (let i = 0; i < data.length; i++) {
+            reac = ` ${data[i][0]} `;
+            prod = ` ${data[i][1]} `;
+            if (reac.includes(` ${a_arr[r]} `)) {
+              if (prod.includes(` ${a_arr[p]} `)) {
+                html += `${check(data[i][0], a_arr[r])}\\longrightarrow ${check(data[i][1], a_arr[p])}\\\\`;
+                break;
+              }
+            }
+          }
+          r++;
+          p++;
+        }
+        output.innerHTML = `$$${html.replace(/\\$/g, '')}end{array}$$`;
+        renderMathInElement(document.getElementById("output"), { delimiters: [{ left: "$$", right: "$$", display: true }, { left: "$", right: "$", display: false }] });
+      }).rkmd_rippleEffect();
+    })
+  })
+  </script>
+</div>

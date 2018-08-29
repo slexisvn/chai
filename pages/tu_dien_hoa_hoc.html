@@ -1,0 +1,156 @@
+<div data-role="page">
+  <div class="navbar cyan darken-2">
+    <div class="navbar-inner">
+      <div class="left">
+        <a href="#" class="link" data-rel="back"><i class="material-icons">arrow_back</i></a>
+      </div>
+      <div class="title">Từ điển phương trình hóa học</div>
+    </div>
+  </div>
+  <div class="ui-content">
+    <div class="card">
+      <label>Nhập chất tham gia</label>
+      <input type="text" id="r" data-clear-btn="true" placeholder="H2 O2" />
+    </div>
+    <div class="card">
+      <label>Nhập sản phẩm</label>
+      <input type="text" id="p" data-clear-btn="true" placeholder="H2O" />
+    </div>
+    <div id="output">
+      <div class="card">
+        <div class="overflow">
+          <span class="katex-display katex">&nbsp;</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+  $.getJSON("../data/eq.json", function(data) {
+    function sub(str) {
+      let result = '';
+      for (let i = 0; i < str.length; i++) {
+        if (isNaN(str.charAt(i))) {
+          result += str.charAt(i)
+        } else {
+          result += `<sub>${str.charAt(i)}</sub>`
+        }
+      }
+      return result
+    }
+
+    function check(str, arr) {
+      let s = str.split(' ');
+      let a = arr.split(' ');
+      let result = '';
+      let c = !1;
+      let i = 0;
+      while (i < s.length) {
+        if (s[i].charAt(s[i].length - 1) === '.') {
+          c = !1;
+          for (let j = 0; j < a.length; j++) {
+            if (a[j] === s[i + 1]) {
+              result += `<tu style="color:red">${s[i].replace('.', '')}${sub(s[i + 1])}</tu>`;
+              c = !0
+            }
+          }
+          if (c === !1) {
+            result += s[i].replace('.', '') + sub(s[i + 1])
+          }
+          i += 2
+        } else {
+          c = !1;
+          for (let j = 0; j < a.length; j++) {
+            if (a[j] === s[i]) {
+              result += `<tu style="color:red">${sub(s[i])}</tu>`;
+              c = !0
+            }
+          }
+          if (c === !1) {
+            result += sub(s[i])
+          }
+          i++
+        }
+        if (i < s.length) {
+          result += ' + '
+        }
+      }
+      return result
+    }
+    $('input').on('input', function() {
+      if (r.value != '' || p.value != '') {
+        let reac_arr = r.value.split(' ');
+        let prod_arr = p.value.split(' ');
+        let count = 0;
+        let html = '';
+        let tu = '';
+        for (let i = 0; i < data.length; i++) {
+          let reac_data = ` ${data[i][0]} `;
+          let prod_data = ` ${data[i][1]} `;
+          let reac_found = !1;
+          for (let j = 0; j < reac_arr.length; j++) {
+            reac_found = !1;
+            if (reac_data.includes(` ${reac_arr[j]} `)) {
+              reac_found = !0
+            }
+            if (reac_found === !1) {
+              break
+            }
+          }
+          if (r.value === '') {
+            reac_found = !0
+          }
+          let prod_found = !1;
+          if (reac_found === !0) {
+            for (let j = 0; j < prod_arr.length; j++) {
+              prod_found = !1;
+              if (prod_data.includes(` ${prod_arr[j]} `)) {
+                prod_found = !0
+              }
+              if (prod_found === !1) {
+                break
+              }
+            }
+            if (p.value === '') {
+              prod_found = !0
+            }
+          }
+          if (reac_found && prod_found) {
+            html += `<div class=card><p><b>${check(data[i][0], r.value)} &rarr; ${check(data[i][1], p.value)}</b></p>`;
+            if (data[i][2].length > 0) {
+              html += `<p>&minus; Nhiệt độ: ${data[i][2]}</p>`
+            }
+            if (data[i][3].length > 0) {
+              html += `<p>&minus; Áp suất: ${data[i][3]}</p>`
+            }
+            if (data[i][4].length > 0) {
+              html += `<p>&minus; Dung môi: ${data[i][4]}</p>`
+            }
+            if (data[i][5].length > 0) {
+              html += `<p>&minus; Chất xúc tác: ${data[i][5]}</p>`
+            }
+            if (data[i][6].length > 0) {
+              html += `<p>&minus; Điều kiện khác: ${data[i][6]}</p>`
+            }
+            if (data[i][7].length > 0) {
+              html += `<p>&minus; Cách thực hiện: ${data[i][7]}</p>`
+            }
+            if (data[i][8].length > 0) {
+              html += `<p>&minus; Hiện tượng: ${data[i][8]}</p>`
+            }
+            if (data[i][9].length > 0) {
+              html += `<p>&minus; Thông tin thêm: ${data[i][9]}</p>`
+            }
+            html += '</div>';
+            count++
+          }
+          if (count >= 20) {
+            tu = '<p>Chỉ hiển thị tối đa 20 kết quả</p>';
+            break
+          }
+        }
+        output.innerHTML = tu + html
+      }
+    })
+  })
+  </script>
+</div>

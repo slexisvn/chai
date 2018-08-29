@@ -1,0 +1,102 @@
+.note {
+  height: 20px;
+  width: 20px;
+  border: 1px solid black;
+  display: inline-block
+}
+
+.W {
+  background-color: #FF00D0;
+  color: #FF00D0;
+  text-shadow: none;
+}
+
+.A {
+  background-color: #1795F4;
+  color: #1795F4;
+  text-shadow: none;
+}
+
+.w {
+  background-color: red;
+  color: red;
+  text-shadow: none;
+}
+
+.a {
+  background-color: #27794E;
+  color: #27794E;
+  text-shadow: none;
+}
+
+.I {
+  background-color: #2BBA6F;
+  color: #2BBA6F;
+  text-shadow: none;
+}
+
+.d {
+  background-color: yellow;
+  color: yellow
+}
+
+.none {
+  background-color: white;
+  color: white
+}
+
+.fix-column {
+  float: left
+}
+
+.thead {
+  height: 50px;
+  white-space: nowrap
+}
+
+.thead>span, .trow>span {
+  display: inline-block;
+  width: 70px;
+  text-align: center;
+  border: 1px solid black;
+  line-height: 50px
+}
+
+.trow {
+  white-space: nowrap
+}
+
+.tbody {
+  height: 450px;
+  overflow: auto
+}
+
+.fix-column>.tbody {
+  overflow: hidden
+}
+
+.fix-column>.tbody>.trow {
+  margin-top: -50px;
+  margin-bottom: 50px
+}
+
+.fix-column>.tbody>.trow:first-child {
+  margin-top: 0
+}
+
+.rest-columns>.thead {
+  overflow: hidden
+}
+
+.rest-columns>.thead>span {
+  margin-right: 50px;
+  margin-left: -50px
+}
+
+.rest-columns>.tbody>.trow>span:after {
+  content: 'a'
+}
+
+.rest-columns>.thead>:first-child {
+  margin-left: 0
+}
