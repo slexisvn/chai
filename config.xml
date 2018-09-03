@@ -1,24 +1,28 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.sinh.chai" version="1.0.0" versionCode="100" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.sinh.chai" version="1.1.0" versionCode="110" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
   <name>Chai</name>
   <author email="sinhtrngvn123@gmail.com" href="https://truongvansinh.com">
     Trương Văn Sinh
   </author>
   <content src="index.html" />
   <access origin="*" />
-  <allow-intent href="http://*/*" />
-  <allow-intent href="https://*/*" />
-  <allow-intent href="tel:*" />
-  <allow-intent href="sms:*" />
-  <allow-intent href="mailto:*" />
-  <allow-intent href="geo:*" />
-  <allow-intent href="market:*" />
+  <allow-intent href="http://*/*"/>
+  <allow-intent href="https://*/*"/>
+  <allow-intent href="tel:*"/>
+  <allow-intent href="sms:*"/>
+  <allow-intent href="mailto:*"/>
+  <allow-intent href="geo:*"/>
+  <allow-intent href="market:*"/>
   <preference name="android-minSdkVersion" value="19" />
+  <preference name="android-targetSdkVersion" value="26" />
   <preference name="android-installLocation" value="auto" />
   <preference name="orientation" value="portrait" />
   <preference name="SplashMaintainAspectRatio" value="true"/>
   <preference name="ShowSplashScreenSpinner" value="false" />
+  <preference name="StatusBarOverlaysWebView" value="false" />
   <plugin name="cordova-plugin-splashscreen" source="npm" />
+  <plugin name="cordova-plugin-statusbar" source="npm" />
+  <plugin name="cordova-plugin-inappbrowser" source="npm" />
   <platform name="android">
     <icon density="ldpi" src="res/icon/android/ldpi.png" />
     <icon density="mdpi" src="res/icon/android/mdpi.png" />
