@@ -1,9 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.sinh.chai" version="1.1.0" versionCode="110" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
   <name>Chai</name>
-  <author email="sinhtrngvn123@gmail.com" href="https://truongvansinh.com">
-    Trương Văn Sinh
+  <author email="sinhtrngvn123@gmail.com" href="https://sinhtruong.com">
+    Sinh Truong
   </author>
+  <decription>
+  	Collection of chemical tools
+  </decription>
   <content src="index.html" />
   <access origin="*" />
   <allow-intent href="http://*/*"/>
@@ -16,7 +19,6 @@
   <preference name="android-minSdkVersion" value="19" />
   <preference name="android-targetSdkVersion" value="26" />
   <preference name="android-installLocation" value="auto" />
-  <preference name="orientation" value="portrait" />
   <preference name="SplashMaintainAspectRatio" value="true"/>
   <preference name="ShowSplashScreenSpinner" value="false" />
   <preference name="StatusBarOverlaysWebView" value="false" />

@@ -37,7 +37,7 @@ function replaceAll(str, map) {
 
 $('.popup').hide();
 
-$.getJSON('../data/ele.json', function(data) {
+$.getJSON('../data/periodic_table.json', function(data) {
   $('.main li a, .close').click(function() {
     $('.page, .popup, #search').toggle();
     let href = $(this).attr('href');

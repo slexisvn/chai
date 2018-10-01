@@ -21,7 +21,7 @@
   </div>
   <script>
   $.getScript("../js/katex.js", function() {
-    $.getJSON("../data/eq.json", function(data) {
+    $.getJSON("../data/equations.json", function(data) {
       function sub(str) {
         let result = '';
         for (let i = 0; i < str.length; i++) {
@@ -80,8 +80,9 @@
           r++;
           p++;
         }
-        output.innerHTML = `$$${html.replace(/\\$/g, '')}end{array}$$`;
-        renderMathInElement(document.getElementById("output"), { delimiters: [{ left: "$$", right: "$$", display: true }, { left: "$", right: "$", display: false }] });
+        output.innerHTML = katex.renderToString(`${html.replace(/\\$/g, '')}end{array}`,{
+          displayMode: true
+        });
       }).rkmd_rippleEffect();
     })
   })

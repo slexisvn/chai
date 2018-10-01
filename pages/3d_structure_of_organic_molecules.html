@@ -264,8 +264,8 @@
     </div>
   </div>
   <script>
-  $.getScript('../js/chem.js', function() {
-    $.getJSON("../data/ele_3d.json", function(data) {
+  $.getScript('../js/3d_structure_of_organic_molecules.js', function() {
+    $.getJSON("../data/3d_structure_of_organic_molecules.json", function(data) {
       let name = a.value;
       let select = b.value;
       let ball = new ChemDoodle.TransformCanvas3D('ball', window.innerWidth - 56, window.innerHeight - 185);

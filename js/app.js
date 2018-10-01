@@ -30,8 +30,8 @@ $('#search_key').focus(function() {
   $('.searchbar-icon, .searchbar-disable-button').removeClass('searchbar-enabled');
 });
 
-$('#DDH-btn').click(function() {
-  $('#day_dien_hoa').slideToggle('slow')
+$('#reactivity_series_btn').click(function() {
+  $('#reactivity_series').slideToggle('slow')
 });
 
 function filter_tools() {
