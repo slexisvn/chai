@@ -1,34 +1,3 @@
-//
-// ChemDoodle Web Components 8.0.0
-//
-// http://web.chemdoodle.com
-//
-// Copyright 2009-2017 iChemLabs, LLC.  All rights reserved.
-//
-// The ChemDoodle Web Components library is licensed under version 3
-// of the GNU GENERAL PUBLIC LICENSE.
-//
-// You may redistribute it and/or modify it under the terms of the
-// GNU General Public License as published by the Free Software Foundation,
-// either version 3 of the License, or (at your option) any later version.
-//
-// As an exception to the GPL, you may distribute this packed form of
-// the code without the copy of the GPL license normally required,
-// provided you include this license notice and a URL through which
-// recipients can access the corresponding unpacked source code. 
-//
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// ChemDoodle Web Components employs 3rd party libraries under the MIT
-// license. For a full list with links to the original source, go to:
-// https://web.chemdoodle.com/installation/download/#libraries
-//
-// Please contact iChemLabs <http://www.ichemlabs.com/contact-us> for
-// alternate licensing options.
-//
 var ChemDoodle=function(){var c={iChemLabs:{},informatics:{},io:{},lib:{},notations:{},structures:{}};c.structures.d2={};c.structures.d3={};c.getVersion=function(){return"8.0.0"};return c}();
 (function(c,n,p){(function(c,g){"object"===typeof module&&"object"===typeof module.exports?module.exports=c.document?g(c,!0):function(c){if(!c.document)throw Error("jQuery requires a window with a document");return g(c)}:g(c)})("undefined"!==typeof c?c:this,function(c,g){function k(e){var a=!!e&&"length"in e&&e.length,b=t.type(e);return"function"===b||t.isWindow(e)?!1:"array"===b||0===a||"number"===typeof a&&0<a&&a-1 in e}function d(e,a,b){if(t.isFunction(a))return t.grep(e,function(e,d){return!!a.call(e,
 d,e)!==b});if(a.nodeType)return t.grep(e,function(e){return e===a!==b});if("string"===typeof a){if(nb.test(a))return t.filter(a,e,b);a=t.filter(a,e)}return t.grep(e,function(e){return-1<Ba.call(a,e)!==b})}function f(e,a){for(;(e=e[a])&&1!==e.nodeType;);return e}function b(e){var a={};t.each(e.match(fa)||[],function(e,b){a[b]=!0});return a}function a(){P.removeEventListener("DOMContentLoaded",a);c.removeEventListener("load",a);t.ready()}function h(){this.expando=t.expando+h.uid++}function r(e,a,b){if(void 0===
@@ -870,3 +839,39 @@ f)};n.optimize=function(a,b,c,d){this._contactServer("optimize",{mol:f.molTo(a)}
 {smiles:a},b,function(a){c(f.molFrom(a.mol))},d)};n.saveFile=function(a,b,c,d){this._contactServer("saveFile",{mol:f.molTo(a)},b,function(a){c(a.link)},d)};n.simulate13CNMR=function(a,b,d,g){b.nucleus="C";b.isotope=13;this._contactServer("simulateNMR",{mol:f.molTo(a)},b,function(a){d(c.readJCAMP(a.jcamp))},g)};n.simulate1HNMR=function(a,b,d,g){b.nucleus="H";b.isotope=1;this._contactServer("simulateNMR",{mol:f.molTo(a)},b,function(a){d(c.readJCAMP(a.jcamp))},g)};n.simulateMassParentPeak=function(a,
 b,d,g){this._contactServer("simulateMassParentPeak",{mol:f.molTo(a)},b,function(a){d(c.readJCAMP(a.jcamp))},g)};n.writeSMILES=function(a,b,c,d){this._contactServer("writeSMILES",{mol:f.molTo(a)},b,function(a){c(a.smiles)},d)};n.version=function(a,b,c){this._contactServer("version",{},a,function(a){b(a.value)},c)};n.checkForUpdates=function(a){this._contactServer("checkForUpdates",{value:k.href},a,function(a){},function(){})}})(ChemDoodle,ChemDoodle.iChemLabs,ChemDoodle.io,ChemDoodle.structures,ChemDoodle.lib.jQuery,
 location);
+
+if (LN === 'vi') {
+  document.getElementsByClassName('title')[1].innerHTML = 'Cấu trúc 3d của phân tử hữu cơ';
+  let lb = document.getElementsByTagName('label');
+  lb[0].innerHTML = 'Phân tử';
+  lb[1].innerHTML = 'Kiểu'
+}
+
+$.getJSON("../data/3d_structure_of_organic_molecules.json", function(data) {
+  let name = a.value;
+  let select = b.value;
+  let ball = new ChemDoodle.TransformCanvas3D('ball', window.innerWidth - 56, window.innerHeight - 185);
+  ball.specs.set3DRepresentation(select);
+  ball.specs.backgroundColor = '#212121';
+  let molFile = data[name];
+  let molecule = ChemDoodle.readMOL(molFile, 1);
+  ball.loadMolecule(molecule);
+  b.onchange = function() {
+    name = a.value;
+    select = b.value;
+    ball.specs.set3DRepresentation(select);
+    ball.specs.backgroundColor = '#212121';
+    molFile = data[name];
+    molecule = ChemDoodle.readMOL(molFile, 1);
+    ball.loadMolecule(molecule);
+  }
+  a.onchange = function() {
+    name = a.value;
+    select = b.value;
+    ball.specs.set3DRepresentation(select);
+    ball.specs.backgroundColor = '#212121';
+    molFile = data[name];
+    molecule = ChemDoodle.readMOL(molFile, 1);
+    ball.loadMolecule(molecule);
+  }
+})

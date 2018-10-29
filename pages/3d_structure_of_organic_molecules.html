@@ -1,21 +1,16 @@
 <div data-role="page">
-  <style>
-  .ui-selectmenu .ui-selectmenu-list li .ui-btn.ui-btn-active {
-    color: #F44336
-  }
-  </style>
-  <div class="navbar red">
+  <div class="navbar">
     <div class="navbar-inner">
       <div class="left">
         <a href="#" class="link" data-rel="back"><i class="material-icons">arrow_back</i></a>
       </div>
-      <div class="title">Cấu trúc 3d của phân tử hữu cơ</div>
+      <div class="title">3d structure of organic molecules</div>
     </div>
   </div>
   <div class="ui-content" role="main">
     <div class="row">
       <div class="col-50">
-        <label>Phân tử</label>
+        <label>Molecules</label>
         <select data-native-menu="false" id="a" data-icon="false">
           <option value="0">Methane</option>
           <option value="1">Ethane</option>
@@ -249,7 +244,7 @@
         </select>
       </div>
       <div class="col-50">
-        <label>Kiểu</label>
+        <label>Style</label>
         <select data-native-menu="false" id="b" data-icon="false">
           <option value="Ball and Stick">Ball and Stick</option>
           <option value="Stick">Stick</option>
@@ -263,37 +258,5 @@
       <canvas class="ChemDoodleWebComponent" id="ball" height="500px"></canvas>
     </div>
   </div>
-  <script>
-  $.getScript('../js/3d_structure_of_organic_molecules.js', function() {
-    $.getJSON("../data/3d_structure_of_organic_molecules.json", function(data) {
-      let name = a.value;
-      let select = b.value;
-      let ball = new ChemDoodle.TransformCanvas3D('ball', window.innerWidth - 56, window.innerHeight - 185);
-      ball.specs.set3DRepresentation(select);
-      ball.specs.backgroundColor = 'white';
-      let molFile = data[name];
-      let molecule = ChemDoodle.readMOL(molFile, 1);
-      ball.loadMolecule(molecule);
-      b.onchange = function() {
-        name = a.value;
-        select = b.value;
-        ball.specs.set3DRepresentation(select);
-        ball.specs.backgroundColor = 'white';
-        molFile = data[name];
-        molecule = ChemDoodle.readMOL(molFile, 1);
-        ball.loadMolecule(molecule);
-      }
-      a.onchange = function() {
-        name = a.value;
-        select = b.value;
-        ball.specs.set3DRepresentation(select);
-        ball.specs.backgroundColor = 'white';
-        molFile = data[name];
-        molecule = ChemDoodle.readMOL(molFile, 1);
-        ball.loadMolecule(molecule);
-      }
-
-    });
-  })
-  </script>
+  <script src="../js/3d_structure_of_organic_molecules.js"></script>
 </div>

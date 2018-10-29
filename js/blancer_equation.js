@@ -671,3 +671,17 @@ function removeAllChildren(node) {
 function appendText(text, node) {
   node.appendChild(document.createTextNode(text))
 }
+
+if (LN === 'vi') {
+  document.getElementsByClassName('title')[1].innerHTML = 'Cân bằng phương trình';
+  document.getElementsByTagName('label')[0].innerHTML = 'Phương trình';
+}
+
+$.getScript("../js/katex.js", function() {
+  cal.onclick = function() {
+    output.innerHTML = katex.renderToString(balance(input.value), {
+      displayMode: true
+    });
+    return false;
+  }
+})

@@ -1,62 +1,163 @@
 <div data-role="page">
   <link rel="stylesheet" href="../css/periodic_table.css">
-  <div class="page page-with-subnavbar">
-    <div class="navbar purple">
+  <div class="page">
+    <div data-role="panel" id="panel" data-display="overlay" data-position-fixed="true" data-position="right">
+      <ul data-role="listview" data-filter="true" data-filter-placeholder="Search elements" data-icon="false" id="search_elements">
+        <li><img class="ui-li-icon s-5"><a href="#Hydrogen">H − Hydrogen</a> </li>
+        <li><img class="ui-li-icon s-2"><a href="#Helium">He − Helium</a></li>
+        <li><img class="ui-li-icon s-3"><a href="#Lithium">Li − Lithium</a></li>
+        <li><img class="ui-li-icon s-4"><a href="#Beryllium">Be − Beryllium</a></li>
+        <li><img class="ui-li-icon s-1"><a href="#Boron">B − Boron</a></li>
+        <li><img class="ui-li-icon s-5"><a href="#Carbon">C − Carbon</a></li>
+        <li><img class="ui-li-icon s-5"><a href="#Nitrogen">N − Nitrogen</a></li>
+        <li><img class="ui-li-icon s-5"><a href="#Oxygen">O − Oxygen</a></li>
+        <li><img class="ui-li-icon s-0"><a href="#Fluorine">F − Fluorine</a></li>
+        <li><img class="ui-li-icon s-2"><a href="#Neon">Ne − Neon</a></li>
+        <li><img class="ui-li-icon s-3"><a href="#Sodium">Na − Sodium</a></li>
+        <li><img class="ui-li-icon s-4"><a href="#Magnesium">Mg − Magnesium</a></li>
+        <li><img class="ui-li-icon s-7"><a href="#Aluminium">Al − <span class="Al">Aluminium</span></a></li>
+        <li><img class="ui-li-icon s-1"><a href="#Silicon">Si − Silicon</a></li>
+        <li><img class="ui-li-icon s-5"><a href="#Phosphorus">P − Phosphorus</a></li>
+        <li><img class="ui-li-icon s-5"><a href="#Sulfur">S − <span class="S">Sulfur</span></a></li>
+        <li><img class="ui-li-icon s-0"><a href="#Chlorine">Cl − Chlorine</a></li>
+        <li><img class="ui-li-icon s-2"><a href="#Argon">Ar − Argon</a></li>
+        <li><img class="ui-li-icon s-3"><a href="#Potassium">K − Potassium</a></li>
+        <li><img class="ui-li-icon s-4"><a href="#Calcium">Ca − Calcium</a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Scandium">Sc − Scandium</a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Titanium">Ti − Titanium</a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Vanadium">V − Vanadium</a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Chromium">Cr − Chromium</a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Manganese">Mn − Manganese</a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Iron">Fe − <span class="Fe">Iron</span></a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Cobalt">Co − Cobalt</a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Nickel">Ni − Nickel</a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Copper">Cu − <span class="Cu">Copper</span></a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Zinc">Zn − <span class="Zn">Zinc</span></a></li>
+        <li><img class="ui-li-icon s-7"><a href="#Gallium">Ga − Gallium</a></li>
+        <li><img class="ui-li-icon s-1"><a href="#Germanium">Ge − Germanium</a></li>
+        <li><img class="ui-li-icon s-1"><a href="#Arsenic">As − Arsenic</a></li>
+        <li><img class="ui-li-icon s-5"><a href="#Selenium">Se − Selenium</a></li>
+        <li><img class="ui-li-icon s-0"><a href="#Bromine">Br − Bromine</a></li>
+        <li><img class="ui-li-icon s-2"><a href="#Krypton">Kr − Krypton</a></li>
+        <li><img class="ui-li-icon s-3"><a href="#Rubidium">Rb − Rubidium</a></li>
+        <li><img class="ui-li-icon s-4"><a href="#Strontium">Sr − Strontium</a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Yttrium">Y − Yttrium</a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Zirconium">Zr − Zirconium</a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Niobium">Nb − Niobium</a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Molybdenum">Mo − Molybdenum</a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Technetium">Tc − Technetium</a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Ruthenium">Ru − Ruthenium</a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Rhodium">Rh − Rhodium</a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Palladium">Pd − Palladium</a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Silver">Ag − <span class="Ag">Silver</span></a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Cadmium">Cd − Cadmium</a></li>
+        <li><img class="ui-li-icon s-7"><a href="#Indium">In − Indium</a></li>
+        <li><img class="ui-li-icon s-7"><a href="#Tin">Sn − <span class="Sn">Tin</span></a></li>
+        <li><img class="ui-li-icon s-1"><a href="#Antimony">Sb − Antimony</a></li>
+        <li><img class="ui-li-icon s-1"><a href="#Tellurium">Te − Tellurium</a></li>
+        <li><img class="ui-li-icon s-0"><a href="#Iodine">I − Iodine</a></li>
+        <li><img class="ui-li-icon s-2"><a href="#Xenon">Xe − Xenon</a></li>
+        <li><img class="ui-li-icon s-3"><a href="#Caesium">Cs − Caesium</a></li>
+        <li><img class="ui-li-icon s-4"><a href="#Barium">Ba − Barium</a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Hafnium">Hf − Hafnium</a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Tantalum">Ta − Tantalum</a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Tungsten">W − Tungsten</a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Rhenium">Re − Rhenium</a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Osmium">Os − Osmium</a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Iridium">Ir − Iridium</a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Platinum">Pt − Platinum</a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Gold">Au − <span class="Au">Gold</span></a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Mercury">Hg − <span class="Hg">Mercury</span></a></li>
+        <li><img class="ui-li-icon s-7"><a href="#Thallium">Tl − Thallium</a></li>
+        <li><img class="ui-li-icon s-7"><a href="#Lead">Pb − <span class="Pb">Lead</span></a></li>
+        <li><img class="ui-li-icon s-7"><a href="#Bismuth">Bi − Bismuth</a></li>
+        <li><img class="ui-li-icon s-7"><a href="#Polonium">Po − Polonium</a></li>
+        <li><img class="ui-li-icon s-0"><a href="#Astatine">At − Astatine</a></li>
+        <li><img class="ui-li-icon s-2"><a href="#Radon">Rn − Radon</a></li>
+        <li><img class="ui-li-icon s-3"><a href="#Francium">Fr − Francium</a></li>
+        <li><img class="ui-li-icon s-4"><a href="#Radium">Ra − Radium</a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Rutherfordium">Rf − Rutherfordium</a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Dubnium">Db − Dubnium</a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Seaborgium">Sg − Seaborgium</a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Bohrium">Bh − Bohrium</a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Hassium">Hs − Hassium</a></li>
+        <li><img class="ui-li-icon s-10"><a href="#Meitnerium">Mt − Meitnerium</a></li>
+        <li><img class="ui-li-icon s-10"><a href="#Darmstadtium">Ds − Darmstadtium</a></li>
+        <li><img class="ui-li-icon s-10"><a href="#Roentgenium">Rg − Roentgenium</a></li>
+        <li><img class="ui-li-icon s-6"><a href="#Copernicium">Cn − Copernicium</a></li>
+        <li><img class="ui-li-icon s-10"><a href="#Nihonium">Nh − Nihonium</a></li>
+        <li><img class="ui-li-icon s-10"><a href="#Flerovium">Fl − Flerovium</a></li>
+        <li><img class="ui-li-icon s-10"><a href="#Moscovium">Mc − Moscovium</a></li>
+        <li><img class="ui-li-icon s-10"><a href="#Livermorium">Lv − Livermorium</a></li>
+        <li><img class="ui-li-icon s-10"><a href="#Tennessine">Ts − Tennessine</a></li>
+        <li><img class="ui-li-icon s-10"><a href="#Oganesson">Og − Oganesson</a></li>
+        <li><img class="ui-li-icon s-8"><a href="#Lanthanum">La − Lanthanum</a></li>
+        <li><img class="ui-li-icon s-8"><a href="#Cerium">Ce − Cerium</a></li>
+        <li><img class="ui-li-icon s-8"><a href="#Praseodymium">Pr − Praseodymium</a></li>
+        <li><img class="ui-li-icon s-8"><a href="#Neodymium">Nd − Neodymium</a></li>
+        <li><img class="ui-li-icon s-8"><a href="#Promethium">Pm − Promethium</a></li>
+        <li><img class="ui-li-icon s-8"><a href="#Samarium">Sm − Samarium</a></li>
+        <li><img class="ui-li-icon s-8"><a href="#Europium">Eu − Europium</a></li>
+        <li><img class="ui-li-icon s-8"><a href="#Gadolinium">Gd − Gadolinium</a></li>
+        <li><img class="ui-li-icon s-8"><a href="#Terbium">Tb − Terbium</a></li>
+        <li><img class="ui-li-icon s-8"><a href="#Dysprosium">Dy − Dysprosium</a></li>
+        <li><img class="ui-li-icon s-8"><a href="#Holmium">Ho − Holmium</a></li>
+        <li><img class="ui-li-icon s-8"><a href="#Erbium">Er − Erbium</a></li>
+        <li><img class="ui-li-icon s-8"><a href="#Thumlium">Tm − Thumlium</a></li>
+        <li><img class="ui-li-icon s-8"><a href="#Ytterbium">Yb − Ytterbium</a></li>
+        <li><img class="ui-li-icon s-8"><a href="#Lutetium">Lu − Lutetium</a></li>
+        <li><img class="ui-li-icon s-9"><a href="#Actinium">Ac − Actinium</a></li>
+        <li><img class="ui-li-icon s-9"><a href="#Thorium">Th − Thorium</a></li>
+        <li><img class="ui-li-icon s-9"><a href="#Protactinium">Pa − Protactinium</a></li>
+        <li><img class="ui-li-icon s-9"><a href="#Uranium">U − Uranium</a></li>
+        <li><img class="ui-li-icon s-9"><a href="#Neptunium">Np − Neptunium</a></li>
+        <li><img class="ui-li-icon s-9"><a href="#Plutonium">Pu − Plutonium</a></li>
+        <li><img class="ui-li-icon s-9"><a href="#Americium">Am − Americium</a></li>
+        <li><img class="ui-li-icon s-9"><a href="#Curium">Cm − Curium</a></li>
+        <li><img class="ui-li-icon s-9"><a href="#Berkelium">Bk − Berkelium</a></li>
+        <li><img class="ui-li-icon s-9"><a href="#Californium">Cf − Californium</a></li>
+        <li><img class="ui-li-icon s-9"><a href="#Einsteinium">Es − Einsteinium</a></li>
+        <li><img class="ui-li-icon s-9"><a href="#Fermium">Fm − Fermium</a></li>
+        <li><img class="ui-li-icon s-9"><a href="#Mendelevium">Md − Mendelevium</a></li>
+        <li><img class="ui-li-icon s-9"><a href="#Nobelium">No − Nobelium</a></li>
+        <li><img class="ui-li-icon s-9"><a href="#Lawrencium">Lr − Lawrencium</a></li>
+      </ul>
+    </div>
+    <div class="navbar">
       <div class="navbar-inner">
         <div class="left">
           <a href="#" class="link" data-rel="back"><i class="material-icons">arrow_back</i></a>
         </div>
-        <div class="title">Bảng tuần hoàn hóa học</div>
-        <div class="subnavbar">
-          <form class="searchbar">
-            <div class="searchbar-inner">
-              <div class="searchbar-input-wrap">
-                <input type="text" placeholder="Tìm nguyên tố" data-clear-btn="true" class="search_key" />
-                <span class="searchbar-icon"><i class="material-icons">search</i></span>
-              </div>
-              <span class="searchbar-disable-button"><i class="material-icons">arrow_back</i></span>
-            </div>
-          </form>
+        <div class="title">Periodic table</div>
+        <div class="right">
+          <a href="#panel" class="link"><i class="material-icons">search</i></a>
         </div>
       </div>
     </div>
     <div class="ui-content">
-      <div class="overflow" style="margin-top:-32px">
+    	<div class="overflow">
         <div class="wrapper">
-          <ul class="main"> <li class="empty"></li> <li class="empty">IA</li> <li class="empty">IIA</li> <li class="empty">IIIB</li> <li class="empty">IVB</li> <li class="empty">VB</li> <li class="empty">VIB</li> <li class="empty">VIIB</li> <li class="empty"></li> <li class="empty">VIIIB</li> <li class="empty"></li> <li class="empty">IB</li> <li class="empty">IIB</li> <li class="empty">IIIA</li> <li class="empty">IVA</li> <li class="empty">VA</li> <li class="empty">VIA</li> <li class="empty">VIIA</li> <li class="empty">VIIIA</li> <li class="empty">1</li> <li data-pos="1" data-nb="1.0079" class="type-5"><a href="#Hydrogen">H</a><span>Hydrogen</span> </li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li> <li data-pos="2" data-nb="4.0026" class="type-2"><a href="#Helium">He</a><span>Helium</span></li> <li class="empty">2</li> <li data-pos="3" data-nb="6.941" class="type-3"><a href="#Lithium">Li</a><span>Lithium</span></li> <li data-pos="4" data-nb="9.0122" class="type-4"><a href="#Beryllium">Be</a><span>Beryllium</span></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li> <li data-pos="5" data-nb="10.811" class="type-1"><a href="#Boron">B</a><span>Boron</span></li> <li data-pos="6" data-nb="12.011" class="type-5"><a href="#Carbon">C</a><span>Carbon</span></li> <li data-pos="7" data-nb="14.007" class="type-5"><a href="#Nitrogen">N</a><span>Nitrogen</span></li> <li data-pos="8" data-nb="15.999" class="type-5"><a href="#Oxygen">O</a><span>Oxygen</span></li> <li data-pos="9" data-nb="18.998" class="type-0"><a href="#Fluorine">F</a><span>Fluorine</span></li> <li data-pos="10" data-nb="20.180" class="type-2"><a href="#Neon">Ne</a><span>Neon</span></li> <li class="empty">3</li> <li data-pos="11" data-nb="22.990" class="type-3"><a href="#Sodium">Na</a><span>Sodium</span></li> <li data-pos="12" data-nb="24.305" class="type-4"><a href="#Magnesium">Mg</a><span>Magnesium</span></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li> <li data-pos="13" data-nb="26.982" class="type-7"><a href="#Nhôm">Al</a><span>Nhôm</span></li> <li data-pos="14" data-nb="28.086" class="type-1"><a href="#Silicon">Si</a><span>Silicon</span></li> <li data-pos="15" data-nb="30.974" class="type-5"><a href="#Phosphorus">P</a><span>Phosphorus</span></li> <li data-pos="16" data-nb="32.065" class="type-5"><a href="#Lưu huỳnh">S</a><span>Lưu huỳnh</span></li> <li data-pos="17" data-nb="35.453" class="type-0"><a href="#Chlorine">Cl</a><span>Chlorine</span></li> <li data-pos="18" data-nb="39.948" class="type-2"><a href="#Argon">Ar</a><span>Argon</span></li> <li class="empty">4</li> <li data-pos="19" data-nb="39.098" class="type-3"><a href="#Potassium">K</a><span>Potassium</span></li> <li data-pos="20" data-nb="40.078" class="type-4"><a href="#Calcium">Ca</a><span>Calcium</span></li> <li data-pos="21" data-nb="44.956" class="type-6"><a href="#Scandium">Sc</a><span>Scandium</span></li> <li data-pos="22" data-nb="47.867" class="type-6"><a href="#Titanium">Ti</a><span>Titanium</span></li> <li data-pos="23" data-nb="50.942" class="type-6"><a href="#Vanadium">V</a><span>Vanadium</span></li> <li data-pos="24" data-nb="51.996" class="type-6"><a href="#Chromium">Cr</a><span>Chromium</span></li> <li data-pos="25" data-nb="54.938" class="type-6"><a href="#Manganese">Mn</a><span>Manganese</span></li> <li data-pos="26" data-nb="55.845" class="type-6"><a href="#Sắt">Fe</a><span>Sắt</span></li> <li data-pos="27" data-nb="58.933" class="type-6"><a href="#Cobalt">Co</a><span>Cobalt</span></li> <li data-pos="28" data-nb="58.693" class="type-6"><a href="#Nickel">Ni</a><span>Nickel</span></li> <li data-pos="29" data-nb="63.546" class="type-6"><a href="#Đồng">Cu</a><span>Đồng</span></li> <li data-pos="30" data-nb="65.39" class="type-6"><a href="#Kẽm">Zn</a><span>Kẽm</span></li> <li data-pos="31" data-nb="69.723" class="type-7"><a href="#Gallium">Ga</a><span>Gallium</span></li> <li data-pos="32" data-nb="72.64" class="type-1"><a href="#Germanium">Ge</a><span>Germanium</span></li> <li data-pos="33" data-nb="74.922" class="type-1"><a href="#Arsenic">As</a><span>Arsenic</span></li> <li data-pos="34" data-nb="78.96" class="type-5"><a href="#Selenium">Se</a><span>Selenium</span></li> <li data-pos="35" data-nb="79.904" class="type-0"><a href="#Bromine">Br</a><span>Bromine</span></li> <li data-pos="36" data-nb="83.80" class="type-2"><a href="#Krypton">Kr</a><span>Krypton</span></li> <li class="empty">5</li> <li data-pos="37" data-nb="85.468" class="type-3"><a href="#Rubidium">Rb</a><span>Rubidium</span></li> <li data-pos="38" data-nb="87.62" class="type-4"><a href="#Strontium">Sr</a><span>Strontium</span></li> <li data-pos="39" data-nb="88.906" class="type-6"><a href="#Yttrium">Y</a><span>Yttrium</span></li> <li data-pos="40" data-nb="91.224" class="type-6"><a href="#Zirconium">Zr</a><span>Zirconium</span></li> <li data-pos="41" data-nb="92.906" class="type-6"><a href="#Niobium">Nb</a><span>Niobium</span></li> <li data-pos="42" data-nb="95.94" class="type-6"><a href="#Molybdenum">Mo</a><span>Molybdenum</span></li> <li data-pos="43" data-nb="(96)" class="type-6"><a href="#Technetium">Tc</a><span>Technetium</span></li> <li data-pos="44" data-nb="101.07" class="type-6"><a href="#Ruthenium">Ru</a><span>Ruthenium</span></li> <li data-pos="45" data-nb="102.91" class="type-6"><a href="#Rhodium">Rh</a><span>Rhodium</span></li> <li data-pos="46" data-nb="106.42" class="type-6"><a href="#Palladium">Pd</a><span>Palladium</span></li> <li data-pos="47" data-nb="107.87" class="type-6"><a href="#Bạc">Ag</a><span>Bạc</span></li> <li data-pos="48" data-nb="112.41" class="type-6"><a href="#Cadmium">Cd</a><span>Cadmium</span></li> <li data-pos="49" data-nb="114.82" class="type-7"><a href="#Indium">In</a><span>Indium</span></li> <li data-pos="50" data-nb="118.71" class="type-7"><a href="#Thiếc">Sn</a><span>Thiếc</span></li> <li data-pos="51" data-nb="121.76" class="type-1"><a href="#Antimony">Sb</a><span>Antimony</span></li> <li data-pos="52" data-nb="127.60" class="type-1"><a href="#Tellurium">Te</a><span>Tellurium</span></li> <li data-pos="53" data-nb="126.90" class="type-0"><a href="#Iodine">I</a><span>Iodine</span></li> <li data-pos="54" data-nb="131.29" class="type-2"><a href="#Xenon">Xe</a><span>Xenon</span></li> <li class="empty">6</li> <li data-pos="55" data-nb="132.91" class="type-3"><a href="#Caesium">Cs</a><span>Caesium</span></li> <li data-pos="56" data-nb="137.33" class="type-4"><a href="#Barium">Ba</a><span>Barium</span></li> <li data-pos="57-71" class="type-8">La-Lu</li> <li data-pos="72" data-nb="178.49" class="type-6"><a href="#Hafnium">Hf</a><span>Hafnium</span></li> <li data-pos="73" data-nb="180.95" class="type-6"><a href="#Tantalum">Ta</a><span>Tantalum</span></li> <li data-pos="74" data-nb="183.64" class="type-6"><a href="#Tungsten">W</a><span>Tungsten</span></li> <li data-pos="75" data-nb="186.21" class="type-6"><a href="#Rhenium">Re</a><span>Rhenium</span></li> <li data-pos="76" data-nb="190.23" class="type-6"><a href="#Osmium">Os</a><span>Osmium</span></li> <li data-pos="77" data-nb="192.22" class="type-6"><a href="#Iridium">Ir</a><span>Iridium</span></li> <li data-pos="78" data-nb="195.08" class="type-6"><a href="#Platinum">Pt</a><span>Platinum</span></li> <li data-pos="79" data-nb="196.97" class="type-6"><a href="#Vàng">Au</a><span>Vàng</span></li> <li data-pos="80" data-nb="200.59" class="type-6"><a href="#Thủy ngân">Hg</a><span>Thủy ngân</span></li> <li data-pos="81" data-nb="204.38" class="type-7"><a href="#Thallium">Tl</a><span>Thallium</span></li> <li data-pos="82" data-nb="207.2" class="type-7"><a href="#Chì">Pb</a><span>Chì</span></li> <li data-pos="83" data-nb="208.96" class="type-7"><a href="#Bismuth">Bi</a><span>Bismuth</span></li> <li data-pos="84" data-nb="(209)" class="type-1"><a href="#Polonium">Po</a><span>Polonium</span></li> <li data-pos="85" data-nb="(210)" class="type-0"><a href="#Astatine">At</a><span>Astatine</span></li> <li data-pos="86" data-nb="(222)" class="type-2"><a href="#Radon">Rn</a><span>Radon</span></li> <li class="empty">7</li> <li data-pos="87" data-nb="(223)" class="type-3"><a href="#Francium">Fr</a><span>Francium</span></li> <li data-pos="88" data-nb="(226)" class="type-4"><a href="#Radium">Ra</a><span>Radium</span></li> <li data-pos="89-103" class="type-9">Ac-Lr</li> <li data-pos="104" data-nb="(261)" class="type-6"><a href="#Rutherfordium">Rf</a><span>Rutherfordium</span></li> <li data-pos="105" data-nb="(262)" class="type-6"><a href="#Dubnium">Db</a><span>Dubnium</span></li> <li data-pos="106" data-nb="(266)" class="type-6"><a href="#Seaborgium">Sg</a><span>Seaborgium</span></li> <li data-pos="107" data-nb="(264)" class="type-6"><a href="#Bohrium">Bh</a><span>Bohrium</span></li> <li data-pos="108" data-nb="(277)" class="type-6"><a href="#Hassium">Hs</a><span>Hassium</span></li> <li data-pos="109" data-nb="(268)" class="type-10"><a href="#Meitnerium">Mt</a><span>Meitnerium</span></li> <li data-pos="110" data-nb="(271)" class="type-10"><a href="#Darmstadtium">Ds</a><span>Darmstadtium</span></li> <li data-pos="111" data-nb="(272)" class="type-10"><a href="#Roentgenium">Rg</a><span>Roentgenium</span></li> <li data-pos="112" data-nb="(285)" class="type-6"><a href="#Copernicium">Cn</a><span>Copernicium</span></li> <li data-pos="113" data-nb="(284)" class="type-10"><a href="#Nihonium">Nh</a><span>Nihonium</span></li> <li data-pos="114" data-nb="(289)" class="type-10"><a href="#Flerovium">Fl</a><span>Flerovium</span></li> <li data-pos="115" data-nb="(288)" class="type-10"><a href="#Moscovium">Mc</a><span>Moscovium</span></li> <li data-pos="116" data-nb="(292)" class="type-10"><a href="#Livermorium">Lv</a><span>Livermorium</span></li> <li data-pos="117" data-nb="(294)" class="type-10"><a href="#Tennessine">Ts</a><span>Tennessine</span></li> <li data-pos="118" data-nb="(294)" class="type-10"><a href="#Oganesson">Og</a><span>Oganesson</span></li> </ul>
+          <ul class="main"><li class="empty"></li><li class="empty">IA</li><li class="empty">IIA</li><li class="empty">IIIB</li><li class="empty">IVB</li><li class="empty">VB</li><li class="empty">VIB</li><li class="empty">VIIB</li><li class="empty"></li><li class="empty">VIIIB</li><li class="empty"></li><li class="empty">IB</li><li class="empty">IIB</li><li class="empty">IIIA</li><li class="empty">IVA</li><li class="empty">VA</li><li class="empty">VIA</li><li class="empty">VIIA</li><li class="empty">VIIIA</li><li class="empty">1</li><li data-pos="1" class="type-5"><a href="#Hydrogen">H</a><span>Hydrogen</span> </li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li data-pos="2" class="type-2"><a href="#Helium">He</a><span>Helium</span></li><li class="empty">2</li><li data-pos="3" class="type-3"><a href="#Lithium">Li</a><span>Lithium</span></li><li data-pos="4" class="type-4"><a href="#Beryllium">Be</a><span>Beryllium</span></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li data-pos="5" class="type-1"><a href="#Boron">B</a><span>Boron</span></li><li data-pos="6" class="type-5"><a href="#Carbon">C</a><span>Carbon</span></li><li data-pos="7" class="type-5"><a href="#Nitrogen">N</a><span>Nitrogen</span></li><li data-pos="8" class="type-5"><a href="#Oxygen">O</a><span>Oxygen</span></li><li data-pos="9" class="type-0"><a href="#Fluorine">F</a><span>Fluorine</span></li><li data-pos="10" class="type-2"><a href="#Neon">Ne</a><span>Neon</span></li><li class="empty">3</li><li data-pos="11" class="type-3"><a href="#Sodium">Na</a><span>Sodium</span></li><li data-pos="12" class="type-4"><a href="#Magnesium">Mg</a><span>Magnesium</span></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li data-pos="13" class="type-7"><a href="#Aluminium">Al</a><span class="Al">Aluminium</span></li><li data-pos="14" class="type-1"><a href="#Silicon">Si</a><span>Silicon</span></li><li data-pos="15" class="type-5"><a href="#Phosphorus">P</a><span>Phosphorus</span></li><li data-pos="16" class="type-5"><a href="#Sulfur">S</a><span class="S">Sulfur</span></li><li data-pos="17" class="type-0"><a href="#Chlorine">Cl</a><span>Chlorine</span></li><li data-pos="18" class="type-2"><a href="#Argon">Ar</a><span>Argon</span></li><li class="empty">4</li><li data-pos="19" class="type-3"><a href="#Potassium">K</a><span>Potassium</span></li><li data-pos="20" class="type-4"><a href="#Calcium">Ca</a><span>Calcium</span></li><li data-pos="21" class="type-6"><a href="#Scandium">Sc</a><span>Scandium</span></li><li data-pos="22" class="type-6"><a href="#Titanium">Ti</a><span>Titanium</span></li><li data-pos="23" class="type-6"><a href="#Vanadium">V</a><span>Vanadium</span></li><li data-pos="24" class="type-6"><a href="#Chromium">Cr</a><span>Chromium</span></li><li data-pos="25" class="type-6"><a href="#Manganese">Mn</a><span>Manganese</span></li><li data-pos="26" class="type-6"><a href="#Iron">Fe</a><span class="Fe">Iron</span></li><li data-pos="27" class="type-6"><a href="#Cobalt">Co</a><span>Cobalt</span></li><li data-pos="28" class="type-6"><a href="#Nickel">Ni</a><span>Nickel</span></li><li data-pos="29" class="type-6"><a href="#Copper">Cu</a><span class="Cu">Copper</span></li><li data-pos="30" class="type-6"><a href="#Zinc">Zn</a><span class="Zn">Zinc</span></li><li data-pos="31" class="type-7"><a href="#Gallium">Ga</a><span>Gallium</span></li><li data-pos="32" class="type-1"><a href="#Germanium">Ge</a><span>Germanium</span></li><li data-pos="33" class="type-1"><a href="#Arsenic">As</a><span>Arsenic</span></li><li data-pos="34" class="type-5"><a href="#Selenium">Se</a><span>Selenium</span></li><li data-pos="35" class="type-0"><a href="#Bromine">Br</a><span>Bromine</span></li><li data-pos="36" class="type-2"><a href="#Krypton">Kr</a><span>Krypton</span></li><li class="empty">5</li><li data-pos="37" class="type-3"><a href="#Rubidium">Rb</a><span>Rubidium</span></li><li data-pos="38" class="type-4"><a href="#Strontium">Sr</a><span>Strontium</span></li><li data-pos="39" class="type-6"><a href="#Yttrium">Y</a><span>Yttrium</span></li><li data-pos="40" class="type-6"><a href="#Zirconium">Zr</a><span>Zirconium</span></li><li data-pos="41" class="type-6"><a href="#Niobium">Nb</a><span>Niobium</span></li><li data-pos="42" class="type-6"><a href="#Molybdenum">Mo</a><span>Molybdenum</span></li><li data-pos="43" class="type-6"><a href="#Technetium">Tc</a><span>Technetium</span></li><li data-pos="44" class="type-6"><a href="#Ruthenium">Ru</a><span>Ruthenium</span></li><li data-pos="45" class="type-6"><a href="#Rhodium">Rh</a><span>Rhodium</span></li><li data-pos="46" class="type-6"><a href="#Palladium">Pd</a><span>Palladium</span></li><li data-pos="47" class="type-6"><a href="#Silver">Ag</a><span class="Ag">Silver</span></li><li data-pos="48" class="type-6"><a href="#Cadmium">Cd</a><span>Cadmium</span></li><li data-pos="49" class="type-7"><a href="#Indium">In</a><span>Indium</span></li><li data-pos="50" class="type-7"><a href="#Tin">Sn</a><span class="Sn">Tin</span></li><li data-pos="51" class="type-1"><a href="#Antimony">Sb</a><span>Antimony</span></li><li data-pos="52" class="type-1"><a href="#Tellurium">Te</a><span>Tellurium</span></li><li data-pos="53" class="type-0"><a href="#Iodine">I</a><span>Iodine</span></li><li data-pos="54" class="type-2"><a href="#Xenon">Xe</a><span>Xenon</span></li><li class="empty">6</li><li data-pos="55" class="type-3"><a href="#Caesium">Cs</a><span>Caesium</span></li><li data-pos="56" class="type-4"><a href="#Barium">Ba</a><span>Barium</span></li><li data-pos="57-71">La-Lu</li><li data-pos="72" class="type-6"><a href="#Hafnium">Hf</a><span>Hafnium</span></li><li data-pos="73" class="type-6"><a href="#Tantalum">Ta</a><span>Tantalum</span></li><li data-pos="74" class="type-6"><a href="#Tungsten">W</a><span>Tungsten</span></li><li data-pos="75" class="type-6"><a href="#Rhenium">Re</a><span>Rhenium</span></li><li data-pos="76" class="type-6"><a href="#Osmium">Os</a><span>Osmium</span></li><li data-pos="77" class="type-6"><a href="#Iridium">Ir</a><span>Iridium</span></li><li data-pos="78" class="type-6"><a href="#Platinum">Pt</a><span>Platinum</span></li><li data-pos="79" class="type-6"><a href="#Gold">Au</a><span class="Au">Gold</span></li><li data-pos="80" class="type-6"><a href="#Mercury">Hg</a><span class="Hg">Mercury</span></li><li data-pos="81" class="type-7"><a href="#Thallium">Tl</a><span>Thallium</span></li><li data-pos="82" class="type-7"><a href="#Lead">Pb</a><span class="Pb">Lead</span></li><li data-pos="83" class="type-7"><a href="#Bismuth">Bi</a><span>Bismuth</span></li><li data-pos="84" class="type-7"><a href="#Polonium">Po</a><span>Polonium</span></li><li data-pos="85" class="type-0"><a href="#Astatine">At</a><span>Astatine</span></li><li data-pos="86" class="type-2"><a href="#Radon">Rn</a><span>Radon</span></li><li class="empty">7</li><li data-pos="87" class="type-3"><a href="#Francium">Fr</a><span>Francium</span></li><li data-pos="88" class="type-4"><a href="#Radium">Ra</a><span>Radium</span></li><li data-pos="89-103">Ac-Lr</li><li data-pos="104" class="type-6"><a href="#Rutherfordium">Rf</a><span>Rutherfordium</span></li><li data-pos="105" class="type-6"><a href="#Dubnium">Db</a><span>Dubnium</span></li><li data-pos="106" class="type-6"><a href="#Seaborgium">Sg</a><span>Seaborgium</span></li><li data-pos="107" class="type-6"><a href="#Bohrium">Bh</a><span>Bohrium</span></li><li data-pos="108" class="type-6"><a href="#Hassium">Hs</a><span>Hassium</span></li><li data-pos="109" class="type-10"><a href="#Meitnerium">Mt</a><span>Meitnerium</span></li><li data-pos="110" class="type-10"><a href="#Darmstadtium">Ds</a><span>Darmstadtium</span></li><li data-pos="111" class="type-10"><a href="#Roentgenium">Rg</a><span>Roentgenium</span></li><li data-pos="112" class="type-6"><a href="#Copernicium">Cn</a><span>Copernicium</span></li><li data-pos="113" class="type-10"><a href="#Nihonium">Nh</a><span>Nihonium</span></li><li data-pos="114" class="type-10"><a href="#Flerovium">Fl</a><span>Flerovium</span></li><li data-pos="115" class="type-10"><a href="#Moscovium">Mc</a><span>Moscovium</span></li><li data-pos="116" class="type-10"><a href="#Livermorium">Lv</a><span>Livermorium</span></li><li data-pos="117" class="type-10"><a href="#Tennessine">Ts</a><span>Tennessine</span></li><li data-pos="118" class="type-10"><a href="#Oganesson">Og</a><span>Oganesson</span></li></ul>
           <br/><br/>
-          <ul class="main"><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li> <li data-pos="57" data-nb="138.9" class="type-8"><a href="#Lanthanum">La</a><span>Lanthanum</span></li> <li data-pos="58" data-nb="140.116" class="type-8"><a href="#Cerium">Ce</a><span>Cerium</span></li> <li data-pos="59" data-nb="140.907" class="type-8"><a href="#Praseodymium">Pr</a><span>Praseodymium</span></li> <li data-pos="60" data-nb="144.242" class="type-8"><a href="#Neodymium">Nd</a><span>Neodymium</span></li> <li data-pos="61" data-nb="(145)" class="type-8"><a href="#Promethium">Pm</a><span>Promethium</span></li> <li data-pos="62" data-nb="150.36" class="type-8"><a href="#Samarium">Sm</a><span>Samarium</span></li> <li data-pos="63" data-nb="151.964" class="type-8"><a href="#Europium">Eu</a><span>Europium</span></li> <li data-pos="64" data-nb="157.25" class="type-8"><a href="#Gadolinium">Gd</a><span>Gadolinium</span></li> <li data-pos="65" data-nb="158.92" class="type-8"><a href="#Terbium">Tb</a><span>Terbium</span></li> <li data-pos="66" data-nb="162.5" class="type-8"><a href="#Dysprosium">Dy</a><span>Dysprosium</span></li> <li data-pos="67" data-nb="164.93" class="type-8"><a href="#Holmium">Ho</a><span>Holmium</span></li> <li data-pos="68" data-nb="167.259" class="type-8"><a href="#Erbium">Er</a><span>Erbium</span></li> <li data-pos="69" data-nb="168.93" class="type-8"><a href="#Thumlium">Tm</a><span>Thumlium</span></li> <li data-pos="70" data-nb="173.05" class="type-8"><a href="#Ytterbium">Yb</a><span>Ytterbium</span></li> <li data-pos="71" data-nb="174.96" class="type-8"><a href="#Lutetium">Lu</a><span>Lutetium</span></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li> <li data-pos="89" data-nb="(227)" class="type-9"><a href="#Actinium">Ac</a><span>Actinium</span></li> <li data-pos="90" data-nb="232.04" class="type-9"><a href="#Thorium">Th</a><span>Thorium</span></li> <li data-pos="91" data-nb="231.04" class="type-9"><a href="#Protactinium">Pa</a><span>Protactinium</span></li> <li data-pos="92" data-nb="238.03" class="type-9"><a href="#Uranium">U</a><span>Uranium</span></li> <li data-pos="93" data-nb="(237)" class="type-9"><a href="#Neptunium">Np</a><span>Neptunium</span></li> <li data-pos="94" data-nb="(244)" class="type-9"><a href="#Plutonium">Pu</a><span>Plutonium</span></li> <li data-pos="95" data-nb="(243)" class="type-9"><a href="#Americium">Am</a><span>Americium</span></li> <li data-pos="96" data-nb="(247)" class="type-9"><a href="#Curium">Cm</a><span>Curium</span></li> <li data-pos="97" data-nb="(247)" class="type-9"><a href="#Berkelium">Bk</a><span>Berkelium</span></li> <li data-pos="98" data-nb="(251)" class="type-9"><a href="#Californium">Cf</a><span>Californium</span></li> <li data-pos="99" data-nb="(252)" class="type-9"><a href="#Einsteinium">Es</a><span>Einsteinium</span></li> <li data-pos="100" data-nb="(257)" class="type-9"><a href="#Fermium">Fm</a><span>Fermium</span></li> <li data-pos="101" data-nb="(258)" class="type-9"><a href="#Mendelevium">Md</a><span>Mendelevium</span></li> <li data-pos="102" data-nb="(259)" class="type-9"><a href="#Nobelium">No</a><span>Nobelium</span></li> <li data-pos="103" data-nb="(262)" class="type-9"><a href="#Lawrencium">Lr</a><span>Lawrencium</span></li> </ul>
-          <div class="legend card margin-top-minus-8">
+          <ul class="main"><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li data-pos="57" class="type-8"><a href="#Lanthanum">La</a><span>Lanthanum</span></li><li data-pos="58" class="type-8"><a href="#Cerium">Ce</a><span>Cerium</span></li><li data-pos="59" class="type-8"><a href="#Praseodymium">Pr</a><span>Praseodymium</span></li><li data-pos="60" class="type-8"><a href="#Neodymium">Nd</a><span>Neodymium</span></li><li data-pos="61" class="type-8"><a href="#Promethium">Pm</a><span>Promethium</span></li><li data-pos="62" class="type-8"><a href="#Samarium">Sm</a><span>Samarium</span></li><li data-pos="63" class="type-8"><a href="#Europium">Eu</a><span>Europium</span></li><li data-pos="64" class="type-8"><a href="#Gadolinium">Gd</a><span>Gadolinium</span></li><li data-pos="65" class="type-8"><a href="#Terbium">Tb</a><span>Terbium</span></li><li data-pos="66" class="type-8"><a href="#Dysprosium">Dy</a><span>Dysprosium</span></li><li data-pos="67" class="type-8"><a href="#Holmium">Ho</a><span>Holmium</span></li><li data-pos="68" class="type-8"><a href="#Erbium">Er</a><span>Erbium</span></li><li data-pos="69" class="type-8"><a href="#Thumlium">Tm</a><span>Thumlium</span></li><li data-pos="70" class="type-8"><a href="#Ytterbium">Yb</a><span>Ytterbium</span></li><li data-pos="71" class="type-8"><a href="#Lutetium">Lu</a><span>Lutetium</span></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li class="empty"></li><li data-pos="89" class="type-9"><a href="#Actinium">Ac</a><span>Actinium</span></li><li data-pos="90" class="type-9"><a href="#Thorium">Th</a><span>Thorium</span></li><li data-pos="91" class="type-9"><a href="#Protactinium">Pa</a><span>Protactinium</span></li><li data-pos="92" class="type-9"><a href="#Uranium">U</a><span>Uranium</span></li><li data-pos="93" class="type-9"><a href="#Neptunium">Np</a><span>Neptunium</span></li><li data-pos="94" class="type-9"><a href="#Plutonium">Pu</a><span>Plutonium</span></li><li data-pos="95" class="type-9"><a href="#Americium">Am</a><span>Americium</span></li><li data-pos="96" class="type-9"><a href="#Curium">Cm</a><span>Curium</span></li><li data-pos="97" class="type-9"><a href="#Berkelium">Bk</a><span>Berkelium</span></li><li data-pos="98" class="type-9"><a href="#Californium">Cf</a><span>Californium</span></li><li data-pos="99" class="type-9"><a href="#Einsteinium">Es</a><span>Einsteinium</span></li><li data-pos="100" class="type-9"><a href="#Fermium">Fm</a><span>Fermium</span></li><li data-pos="101" class="type-9"><a href="#Mendelevium">Md</a><span>Mendelevium</span></li><li data-pos="102" class="type-9"><a href="#Nobelium">No</a><span>Nobelium</span></li><li data-pos="103" class="type-9"><a href="#Lawrencium">Lr</a><span>Lawrencium</span></li></ul>
+          <div class="legend card">
             <ul class="note">
-              <li class="type-1">Á kim</li>
-              <li class="type-8">Họ lanthanoid</li>
-              <li class="type-3">Kim loại kiềm</li>
+              <li class="type-1">Metalloid</li>
+              <li class="type-8">Lanthanide</li>
+              <li class="type-3">Alkali metals</li>
               <li class="type-0">Halogens</li>
-              <li class="type-9">Họ actinoid</li>
-              <li class="type-7">Kim loại yếu</li>
-              <li class="type-2">Khí hiếm</li>
-              <li class="type-5">Phi kim</li>
-              <li class="type-4">Kim loại kiềm thổ</li>
-              <li class="type-6">Kim loại chuyển tiếp</li>
-              <li class="type-10">Thuộc tính không rõ</li>
+              <li class="type-9">Actinide</li>
+              <li class="type-7">Post transition metal</li>
+              <li class="type-2">Noble gas</li>
+              <li class="type-5">Other nonmetals</li>
+              <li class="type-4">Alkaline earth metals</li>
+              <li class="type-6">Transition metal</li>
+              <li class="type-10">Unknown chemical properties</li>
             </ul>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="popup">
-    <div class="navbar">
-      <div class="navbar-inner">
-        <div class="left">
-          <a href="#" class="link close"><i class="material-icons black-text">clear</i></a>
-        </div>
-        <div class="title black-text" id="title_element"></div>
-      </div>
-    </div>
-    <div class="ui-content">
-      <div id="output"></div>
-    </div>
-  </div>
-  <script src="../js/periodic_table.js"></script>
+	<script src="../js/periodic_table.js"></script>
 </div>

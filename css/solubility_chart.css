@@ -1,48 +1,42 @@
 .note {
   height: 20px;
   width: 20px;
-  border: 1px solid black;
   display: inline-block
 }
 
-.W {
-  background-color: #FF00D0;
+.W:after {
   color: #FF00D0;
-  text-shadow: none;
+  content: 'W';
 }
 
-.A {
-  background-color: #1795F4;
+.A:after {
   color: #1795F4;
-  text-shadow: none;
+  content: 'A'
 }
 
-.w {
-  background-color: red;
+.w:after {
   color: red;
-  text-shadow: none;
+  content: 'w'
 }
 
-.a {
-  background-color: #27794E;
+.a:after {
   color: #27794E;
-  text-shadow: none;
+  content: 'a'
 }
 
-.I {
-  background-color: #2BBA6F;
+.I:after {
   color: #2BBA6F;
-  text-shadow: none;
+  content: 'I'
 }
 
-.d {
-  background-color: yellow;
-  color: yellow
+.d:after {
+  color: yellow;
+  content: 'd'
 }
 
-.none {
-  background-color: white;
-  color: white
+.none:after {
+  color: white;
+  content: '-'
 }
 
 .fix-column {
@@ -58,7 +52,7 @@
   display: inline-block;
   width: 70px;
   text-align: center;
-  border: 1px solid black;
+  border: 1px solid #292929;
   line-height: 50px
 }
 
@@ -91,10 +85,6 @@
 .rest-columns>.thead>span {
   margin-right: 50px;
   margin-left: -50px
-}
-
-.rest-columns>.tbody>.trow>span:after {
-  content: 'a'
 }
 
 .rest-columns>.thead>:first-child {

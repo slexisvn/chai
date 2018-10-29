@@ -2,29 +2,28 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chai − Bộ sưu tập các công cụ Hóa học</title>
-  <link rel="stylesheet" href="css/jqm.css">
-  <link rel="stylesheet" href="css/app.css">
-  <link rel="stylesheet" href="css/color.css">
-  <link rel="stylesheet" href="css/katex.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chai − Collection of chemical tools</title>
+  <link rel="stylesheet" href="css/jqm.css" />
+  <link rel="stylesheet" href="css/app.css" />
+  <link rel="stylesheet" href="css/katex.css" />
 </head>
 
 <body>
   <div data-role="page" class="page-with-subnavbar">
-    <div class="navbar animatedColor">
+    <div class="navbar">
       <div class="navbar-inner">
         <div class="title">Chai</div>
         <div class="right">
           <a href="pages/docs.html" class="link"><i class="material-icons">help_outline</i></a>
-          <a href="pages/info.html" class="link"><i class="material-icons">info_outline</i></a>
+          <a href="pages/about.html" class="link"><i class="material-icons">info_outline</i></a>
         </div>
         <div class="subnavbar">
           <form class="searchbar">
             <div class="searchbar-inner">
               <div class="searchbar-input-wrap">
-                <input type="text" placeholder="Tìm công cụ" data-clear-btn="true" oninput="filter_tools()" id="search_key" />
+                <input type="text" placeholder="Search tools" data-clear-btn="true" oninput="filter_tools()" id="search_key" />
                 <span class="searchbar-icon"><i class="material-icons">search</i></span>
               </div>
               <span class="searchbar-disable-button"><i class="material-icons">arrow_back</i></span>
@@ -36,34 +35,37 @@
     <div class="ui-content">
       <div class="row" style="margin:4px -4px">
         <div class="col">
-          <div class="card center"><a href="pages/molar_mass_calculator.html"><img src="img/icon/molar_mass_calculator.svg" /><span>Tính khối lượng mol</span></a></div>
+          <div class="card center"><a href="pages/molar_mass_calculator.html"><img src="img/icon/molar_mass_calculator.svg" /><span>Molar mass calculator</span></a></div>
         </div>
         <div class="col">
-          <div class="card center"><a href="pages/blancer_equation.html"><img src="img/icon/blancer_equation.svg" /><span>Cân bằng phản ứng hóa học</span></a></div>
+          <div class="card center"><a href="pages/blancer_equation.html"><img src="img/icon/blancer_equation.svg" /><span>Blancer equation</span></a></div>
         </div>
         <div class="col">
-          <div class="card center"><a href="pages/chain_reaction.html"><img src="img/icon/chain_reaction.svg" /><span>Giải chuỗi phương trình hóa học</span></a></div>
+          <div class="card center"><a href="pages/chain_reaction.html"><img src="img/icon/chain_reaction.svg" /><span>Chain reaction</span></a></div>
         </div>
         <div class="col">
-          <div class="card center"><a href="pages/solubility_chart.html"><img src="img/icon/solubility_chart.svg" /><span>Bảng tính tan</span></a></div>
+          <div class="card center"><a href="pages/solubility_chart.html"><img src="img/icon/solubility_chart.svg" /><span>Solubility chart</span></a></div>
         </div>
         <div class="col">
-          <div class="card center"><a href="pages/periodic_table.html"><img src="img/icon/periodic_table.svg" /><span>Bảng tuần hoàn hóa học</span></a></div>
+          <div class="card center"><a href="pages/periodic_table.html"><img src="img/icon/periodic_table.svg" /><span>Periodic table</span></a></div>
         </div>
         <div class="col">
-          <div class="card center"><a href="pages/equations.html"><img src="img/icon/equations.svg" /><span>Từ điển phương trình hóa học</span></a></div>
+          <div class="card center"><a href="pages/equations.html"><img src="img/icon/equations.svg" /><span>Equations</span></a></div>
         </div>
         <div class="col">
-          <div class="card center"><a href="pages/2d_structure_of_organic_molecules.html"><img src="img/icon/2d_structure_of_organic_molecules.svg" /><span>Cấu trúc 2d của phân tử hữu cơ</span></a></div>
+          <div class="card center"><a href="pages/atomic.html"><img src="img/icon/atomic.svg" /><span>Atomic</span></a></div>
         </div>
         <div class="col">
-          <div class="card center"><a href="pages/3d_structure_of_organic_molecules.html"><img src="img/icon/3d_structure_of_organic_molecules.svg" /><span>Cấu trúc 3d của phân tử hữu cơ</span></a></div>
+          <div class="card center"><a href="pages/2d_structure_of_organic_molecules.html"><img src="img/icon/2d_structure_of_organic_molecules.svg" /><span>2d structure of organic molecules</span></a></div>
         </div>
         <div class="col">
-          <div class="card center"><a href="#" id="reactivity_series_btn"><img src="img/icon/reactivity_series.svg" /><span>Dãy điện hóa kim loại</span></a></div>
+          <div class="card center"><a href="pages/3d_structure_of_organic_molecules.html"><img src="img/icon/3d_structure_of_organic_molecules.svg" /><span>3d structure of organic molecules</span></a></div>
         </div>
         <div class="col">
-          <div class="card center"><a href="pages/spell_with_elements.html"><img src="img/icon/spell_with_elements.svg" /><span>Đánh vần với nguyên tố</span></a></div>
+          <div class="card center"><a href="#" id="reactivity_series_btn"><img src="img/icon/reactivity_series.svg" /><span>Reactivity series</span></a></div>
+        </div>
+        <div class="col">
+          <div class="card center"><a href="pages/spelling_with_elements.html"><img src="img/icon/spelling_with_elements.svg" /><span>Spelling with elements</span></a></div>
         </div>
       </div>
       <div class="card overflow" id="reactivity_series" style="display:none">

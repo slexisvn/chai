@@ -1,26 +1,4 @@
 
-(function(d) {
-  d.fn.rkmd_rippleEffect = function() {
-    let a, b, c, f, g, h, k;
-    d(this).on("mousedown", function(e) {
-      a = d(this);
-      if (2 === e.button) return !1;
-      0 === a.find(".ripple").length && a.prepend('<span class="ripple"></span>');
-      b = a.find(".ripple");
-      b.removeClass("animated");
-      h = a.outerWidth();
-      k = a.outerHeight();
-      c = Math.max(h, k);
-      b.css({ width: c, height: c });
-      f = parseInt(e.pageX - a.offset().left) - c / 2;
-      g = parseInt(e.pageY - a.offset().top) - c / 2;
-      b.css({ top: g + "px", left: f + "px" }).addClass("animated");
-      setTimeout(function() { b.remove() },
-        800)
-    })
-  }
-})(jQuery);
-
 $('#search_key').focus(function() {
   $('.searchbar-icon, .searchbar-disable-button').addClass('searchbar-enabled');
   if ($(this).val() === '') {
@@ -38,12 +16,21 @@ function filter_tools() {
   let filter = search_key.value.toUpperCase();
   let parent = document.getElementsByClassName('card');
   let child;
-  for (let i = 0; i < parent.length; i++) {
+  for (let i = 0; i < 10; i++) {
     child = parent[i].getElementsByTagName('a')[0].getElementsByTagName('span')[0];
     if (child.innerHTML.toUpperCase().includes(filter)) {
       document.getElementsByClassName('col')[i].style.display = "";
     } else {
       document.getElementsByClassName('col')[i].style.display = "none";
     }
+  }
+}
+
+var LN = navigator.language.substr(0, 2);
+if (LN === 'vi') {
+  search_key.placeholder = 'Tìm công cụ';
+  let _vi = ['Tính khối lượng mol', 'Cân bằng phương trình', 'Chuỗi phương trình', 'Bảng tính tan', 'Bảng tuần hoàn', 'Phương trình', 'Chất hóa học', 'Cấu trúc 2d của phân tử hữu cơ', 'Cấu trúc 3d của phân tử hữu cơ', 'Dãy điện hóa kim loại', 'Đánh vần với nguyên tố'];
+  for (let i = 0; i < 11; i++) {
+    document.getElementsByClassName('center')[i].getElementsByTagName('span')[0].innerHTML = _vi[i];
   }
 }
