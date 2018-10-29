@@ -214,6 +214,6 @@ function rounded(number, percision) {
   return Math.round(number * (10 ** percision)) / (10 ** percision)
 }
 
-$('.button').click(function() {
+cal.onclick = function() {
   output.innerHTML = calculate(input.value)
-}).rkmd_rippleEffect()
+}
