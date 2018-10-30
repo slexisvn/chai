@@ -48,7 +48,7 @@ button.ui-btn {
 }
 
 body {
-  background-color: #30495e
+  background-color: #282828
 }
 
 label,
@@ -170,7 +170,7 @@ a.link {
 }
 
 .navbar {
-  background-color: #3c5b75;
+  background-color: #282828;
   height: 56px;
   z-index: 500;
   backface-visibility: hidden;
@@ -324,7 +324,7 @@ a.link {
 
 .card {
   position: relative;
-  background: #3c5b75;
+  background: #303030;
   border-radius: 2px;
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
   box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
@@ -370,7 +370,7 @@ a.link {
 }
 
 button.ui-btn {
-  background-color: #3c5b75;
+  background-color: #303030;
   border-radius: 2px;
   line-height: 36px;
   height: 36px;

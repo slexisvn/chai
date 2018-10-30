@@ -852,7 +852,7 @@ $.getJSON("../data/3d_structure_of_organic_molecules.json", function(data) {
   let select = b.value;
   let ball = new ChemDoodle.TransformCanvas3D('ball', window.innerWidth - 56, window.innerHeight - 185);
   ball.specs.set3DRepresentation(select);
-  ball.specs.backgroundColor = '#212121';
+  ball.specs.backgroundColor = '#303030';
   let molFile = data[name];
   let molecule = ChemDoodle.readMOL(molFile, 1);
   ball.loadMolecule(molecule);
@@ -860,7 +860,7 @@ $.getJSON("../data/3d_structure_of_organic_molecules.json", function(data) {
     name = a.value;
     select = b.value;
     ball.specs.set3DRepresentation(select);
-    ball.specs.backgroundColor = '#212121';
+    ball.specs.backgroundColor = '#303030';
     molFile = data[name];
     molecule = ChemDoodle.readMOL(molFile, 1);
     ball.loadMolecule(molecule);
@@ -869,7 +869,7 @@ $.getJSON("../data/3d_structure_of_organic_molecules.json", function(data) {
     name = a.value;
     select = b.value;
     ball.specs.set3DRepresentation(select);
-    ball.specs.backgroundColor = '#212121';
+    ball.specs.backgroundColor = '#303030';
     molFile = data[name];
     molecule = ChemDoodle.readMOL(molFile, 1);
     ball.loadMolecule(molecule);

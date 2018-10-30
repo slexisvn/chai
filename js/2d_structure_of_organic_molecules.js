@@ -59,8 +59,8 @@ function convertMolecule(molecule) {
   }
 }
 var centerPanel = document.getElementById("plot");
-var mainPanelHeight = 450;
-var mainPanelWidth = 450;
+var mainPanelHeight = 150;
+var mainPanelWidth = 150;
 var mainPanel = d3.select("#plot").append("svg").attr("preserveAspectRatio", "xMinYMin meet").attr("viewBox", "0 0 " + mainPanelWidth + " " + mainPanelHeight + "");
 var forceProperties = {
   size: [mainPanelWidth, mainPanelHeight],
