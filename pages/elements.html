@@ -96,7 +96,7 @@
               ${mn(data[i]['covalent radius'], `<tr><td>− Bán kính cộng hóa trị</td><td>:</td><td>??? pm</td></tr>`)}
               ${mn(data[i]['Van der Waals radius'], `<tr><td>− Bán kính Van der Waals</td><td>:</td><td>??? pm</td></tr>`)}
             </table>
-            ${i < 98 ? `<img src="../img/elements/element_spec_${data[i].symbol}.jpg" width=100% /><p align=center>Vạch quang phổ của ${data[i].name}</p>` : ''}
+            ${i < 98 ? `<img src="../img/elements/element_spec_${data[i].symbol.toLowerCase()}.jpg" width=100% /><p align=center>Vạch quang phổ của ${data[i].name}</p>` : ''}
           </div>
           <div class=card>
             <h3>Thông tin khác</h3>
@@ -200,7 +200,7 @@
               ${mn(data[i]['covalent radius'], `<tr><td>− Covalent radius</td><td>:</td><td>??? pm</td></tr>`)}
               ${mn(data[i]['Van der Waals radius'], `<tr><td>− Van der Waals radius</td><td>:</td><td>??? pm</td></tr>`)}
             </table>
-            ${i < 98 ? `<img src="../img/elements/element_spec_${data[i].symbol}.jpg" width=100% /><p align=center>Spectral lines of ${data[i].name}</p>` : ''}
+            ${i < 98 ? `<img src="../img/elements/element_spec_${data[i].symbol.toLowerCase()}.jpg" width=100% /><p align=center>Spectral lines of ${data[i].name}</p>` : ''}
           </div>
           <div class=card>
             <h3>Other properties</h3>
