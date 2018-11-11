@@ -15,27 +15,27 @@
 }
 
 .w:after {
-  color: red;
+  color: #f44336;
   content: 'w'
 }
 
 .a:after {
-  color: #27794E;
+  color: #ff9800;
   content: 'a'
 }
 
 .I:after {
-  color: #2BBA6F;
+  color: #4caf50;
   content: 'I'
 }
 
 .d:after {
-  color: yellow;
+  color: #ffeb3b;
   content: 'd'
 }
 
 .none:after {
-  color: white;
+  color: #fff;
   content: '-'
 }
 

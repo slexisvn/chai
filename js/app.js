@@ -16,7 +16,7 @@ function filter_tools() {
   let filter = search_key.value.toUpperCase();
   let parent = document.getElementsByClassName('card');
   let child;
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 11; i++) {
     child = parent[i].getElementsByTagName('a')[0].getElementsByTagName('span')[0];
     if (child.innerHTML.toUpperCase().includes(filter)) {
       document.getElementsByClassName('col')[i].style.display = "";
@@ -27,10 +27,15 @@ function filter_tools() {
 }
 
 var LN = navigator.language.substr(0, 2);
+var atg = document.getElementsByTagName('a');
 if (LN === 'vi') {
   search_key.placeholder = 'Tìm công cụ';
   let _vi = ['Tính khối lượng mol', 'Cân bằng phương trình', 'Chuỗi phương trình', 'Bảng tính tan', 'Bảng tuần hoàn', 'Phương trình', 'Chất hóa học', 'Cấu trúc 2d của phân tử hữu cơ', 'Cấu trúc 3d của phân tử hữu cơ', 'Dãy điện hóa kim loại', 'Đánh vần với nguyên tố'];
   for (let i = 0; i < 11; i++) {
     document.getElementsByClassName('center')[i].getElementsByTagName('span')[0].innerHTML = _vi[i];
   }
+  atg[0].href = 'pages/docs-vi.html';
+  atg[6].href = 'pages/periodic_table-vi.html';
 }
+
+var elept = '';

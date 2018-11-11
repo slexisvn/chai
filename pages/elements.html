@@ -1,0 +1,254 @@
+<div data-role="page">
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="left">
+        <a href="#" class="link" data-rel="back"><i class="material-icons">arrow_back</i></a>
+      </div>
+      <div class="title" id="eletit"></div>
+      <div class="right">
+        <a href="#" class="link" id="wiki" target="_blank"><i class="material-icons">W</i></a>
+      </div>
+    </div>
+  </div>
+  <div class="ui-content" id="output"></div>
+  <script>
+  $.getJSON(LN === 'vi' ? '../data/elements-vi.json' : '../data/elements-en.json', function(data) {
+    let wl = '';
+    let result = '';
+    let sp = st => st.replace(/(·10)(\d+|−\d+)/g, '$1<sup>$2</sup>').replace(/\(([A-Z]|[A-Z][a-z])(\d+)\)/g, '($1<sub>$2</sub>)')
+    let hg = jh => jh !== undefined ? jh : '';
+    let mn = (oy, pl) => oy !== undefined && pl !== undefined ? sp(pl.replace(/\?\?\?/g, oy)) : '';
+    let ck = (x, s = 0) => {
+      for (let i = 0; i < 6; i++) {
+        s += x[i] === undefined ? 1 : 0;
+      }
+      return s === 6 ? false : true
+    }
+    for (let i = 0; i < 118; i++) {
+      let up = data[i]['electrical resistivity unit prefix'];
+      let va = [data[i]['vapor pressure 1'], data[i]['vapor pressure 10'], data[i]['vapor pressure 100'], data[i]['vapor pressure 1 k'], data[i]['vapor pressure 10 k'], data[i]['vapor pressure 100 k']];
+      if (data[i].name === elept.toLowerCase()) {
+        eletit.innerHTML = `${elept}, <sub>${data[i].number}</sub>${data[i].symbol}`;
+        if (i < 99 || i === 101 || i === 102 || i === 103) {
+          result += `<div class=card><img src="../img/elements/element_${i + 1}.jpg" width=100% /></div>`
+        }
+        if (LN === 'vi') {
+          result += `
+          <div class=card>
+            <h3>Tính chất chung</h3>
+            <table cellpadding=10 width=100%>
+              ${mn(data[i].allotropes, '<tr><td>− Hình thù</td><td>:</td><td>???</td></tr>')}
+              ${mn(data[i].appearance, '<tr><td>− Hình dạng</td><td>:</td><td>???</td></tr>')}
+              <tr><td>− Khối lượng mol</td><td>:</td><td>${data[i]['atomic mass']} g/mol</td></tr>
+            </table> 
+          </div>
+          <div class=card>
+            <h3><span style="text-transform: capitalize">${data[i].name}</span> trong bảng tuần hoàn</h3>
+            <table cellpadding=10 width=100%>
+              <tr><td>− Số hiệu nguyên tử (Z)</td><td>:</td><td>${data[i].number}</td></tr>
+              <tr><td>− Nhóm</td><td>:</td><td>${data[i].group}</td></tr>
+              <tr><td>− Chu kì</td><td>:</td><td>${data[i].period}</td></tr>
+              <tr><td>− Phân lớp</td><td>:</td><td>${data[i].block}</td></tr>
+              <tr><td>− Phân loại</td><td>:</td><td>${data[i].category}</td></tr>
+              <tr><td>− Cấu hình electron</td><td>:</td><td>${data[i]['electron configuration'].replace(/(\d+)(?![a-z])/g, '<sup>$1</sup>')}</td></tr>
+              <tr><td>− Electron mỗi lớp</td><td>:</td><td>${data[i]['electrons per shell']}</td></tr>
+            </table>
+          </div>
+          <div class=card>
+            <h3>Tính chất vật lí</h3>
+            <table cellpadding=10 width=100%>
+              <tr><td>− Trạng thái (đktc)</td><td>:</td><td>${data[i].phase}</td></tr>
+              ${mn(data[i]['melting point K'], `<tr><td>− Điểm nóng chảy</td><td>:</td><td>??? K (${data[i]['melting point C']} °C, ${data[i]['melting point F']} °F)</td></tr>`)}
+              ${mn(data[i]['boiling point K'], `<tr><td>− Điểm sôi</td><td>:</td><td>??? K (${data[i]['boiling point C']} °C, ${data[i]['boiling point F']} °F)</td></tr>`)}
+              <tr><td>− Mật độ</td><td>:</td><td>
+                ${mn(data[i]['density gplstp'], `??? g/l (đktc)`)}
+                ${mn(data[i]['density gpcm3nrt'], `<br />??? g/cm<sup>3</sup> (gần nhiệt độ phòng)`)}
+                ${mn(data[i]['density gpcm3mp'], `<br />??? g/cm<sup>3</sup> (tại điểm nóng chảy)`)}
+                ${mn(data[i]['density gpcm3bp'], `<br />??? g/cm<sup>3</sup> (tại điểm sôi)`)}
+              </td></tr>
+              ${mn(data[i]['triple point K'], `<tr><td>− Điểm ba trạng thái</td><td>:</td><td>??? K, ${data[i]['triple point kPa']} kPa</td></tr>`)}
+              ${mn(data[i]['critical point K'], `<tr><td>− Điểm tới hạn</td><td>:</td><td>??? K, ${data[i]['critical point MPa']} MPa</td></tr>`)}
+              ${mn(data[i]['heat fusion'], `<tr><td>− Nhiệt lượng nóng chảy</td><td>:</td><td>??? kJ/mol</td></tr>`)}
+              ${mn(data[i]['heat vaporization'], `<tr><td>− Nhiệt lượng bay hơi</td><td>:</td><td>??? kJ/mol</td></tr>`)}
+              ${mn(data[i]['heat capacity'], `<tr><td>− Nhiệt dung</td><td>:</td><td>??? J/(mol·K)</td></tr>`)}
+            </table>
+            ${ck(va) ? `
+              <h4 align=center>Áp suất hơi</h4>
+              <div class=overflow-nowrap>
+                <table border=1 cellpadding=10 cellspacing=0 width=100%>
+                  <tr align=center><td>P (Pa)</td><td>1</td><td>10</td><td>100</td><td>1 k</td><td>10 k</td><td>100 k</td></tr>
+                  <tr align=center><td>at T (K)</td><td>${hg(va[0])}</td><td>${hg(va[1])}</td><td>${hg(va[2])}</td><td>${hg(va[3])}</td><td>${hg(va[4])}</td><td>${hg(va[5])}</td></tr>
+                </table>
+              </div>
+            ` : ''}
+          </div>
+          <div class=card>
+            <h3>Tính chất nguyên tử</h3>
+            <table cellpadding=10 width=100%>
+              ${mn(data[i]['oxidation states']), `<tr><td>− Số oxi hóa</td><td>:</td><td>${data[i]['oxidation states']}${mn(data[i]['oxidation states comment'], '<br />???')}</td></tr>`}
+              ${mn(data[i].electronegativity, `<tr><td>− Độ âm điện</td><td>:</td><td>??? (thang Pauling)</td></tr>`)}
+              <tr><td>− Năng lượng ion hóa</td><td>:</td><td>
+                ${mn(data[i]['ionization energy 1'], `thứ nhất ??? kJ/mol`)}
+                ${mn(data[i]['ionization energy 2'], `<br /> thứ 2 ??? kJ/mol`)}
+                ${mn(data[i]['ionization energy 3'], `<br /> thứ 3 ??? kJ/mol`)}
+              </td></tr>
+              ${mn(data[i]['atomic radius'], `<tr><td>− Bán kính nguyên tử</td><td>:</td><td>??? pm (thực nghiệm)</td></tr>`)}
+              ${mn(data[i]['covalent radius'], `<tr><td>− Bán kính cộng hóa trị</td><td>:</td><td>??? pm</td></tr>`)}
+              ${mn(data[i]['Van der Waals radius'], `<tr><td>− Bán kính Van der Waals</td><td>:</td><td>??? pm</td></tr>`)}
+            </table>
+            ${i < 98 ? `<img src="../img/elements/element_spec_${data[i].symbol}.jpg" width=100% /><p align=center>Vạch quang phổ của ${data[i].name}</p>` : ''}
+          </div>
+          <div class=card>
+            <h3>Thông tin khác</h3>
+            <table cellpadding=10 width=100%>
+              ${mn(data[i]['crystal structure'], `<tr><td>− Cấu trúc tinh thể</td><td>:</td><td>??? <br /><img src="../img/elements/${data[i]['crystal structure img'].replace(/ /g, '_')}.png" width=100px/></td></tr>`)}
+              <tr><td>− Vận tốc âm thanh</td><td>:</td><td>
+                ${mn(data[i]['speed of sound'], `??? m/s ${data[i]['speed of sound comment']}`)}
+                ${mn(data[i]['speed of sound rod at 20'], `??? m/s (thanh mỏng, tại 20 °C)`)}
+                ${mn(data[i]['speed of sound rod at r.t.'], `??? m/s (thanh mỏng, nhiệt độ phòng)`)}
+              </td></tr>
+              ${mn(data[i]['thermal expansion'], `<tr><td>− Độ dãn nở vì nhiệt</td><td>:</td><td>??? µm/(m·K)</td></tr>`)}
+              ${mn(data[i]['thermal expansion at 25'], `<tr><td>− Độ dãn nở vì nhiệt</td><td>:</td><td>??? µm/(m·K) (tại 25 °C)</td></tr>`)}
+              ${mn(data[i]['thermal conductivity'], `<tr><td>− Độ dẫn nhiệt</td><td>:</td><td>??? W/(m·K)</td></tr>`)}
+              ${mn(up, `<tr><td>− Điện trở suất</td><td>:</td><td>${mn(data[i]['electrical resistivity'], `??? ${up}Ω·m`)}${mn(data[i]['electrical resistivity at 0'], `??? ${up}Ω·m (tại 0 °C)`)}${mn(data[i]['electrical resistivity at 20'], `??? ${up}Ω·m (tại 20 °C)`)}`)}
+              ${mn(data[i]['magnetic ordering'], `<tr><td>− Tính chất từ</td><td>:</td><td>???</td></tr>`)}
+              ${mn(data[i]['magnetic susceptibility'], `<tr><td>− Độ cảm từ</td><td>:</td><td>??? cm<sup>3</sup>/mol </td></tr>`)}
+              ${mn(data[i]['Youngs modulus'], `<tr><td>− Young's modulus</td><td>:</td><td>??? GPa</td></tr>`)}
+              ${mn(data[i]['Shear modulus'], `<tr><td>− Modulus cắt</td><td>:</td><td>??? GPa</td></tr>`)}
+              ${mn(data[i]['Bulk modulus'], `<tr><td>− Modulus nén</td><td>:</td><td>??? GPa</td></tr>`)}
+              ${mn(data[i]['Poisson ratio'], `<tr><td>− Hệ số Poisson</td><td>:</td><td>???</td></tr>`)}
+              ${mn(data[i]['Mohs hardness'], `<tr><td>− Độ cứng theo thang Mohs</td><td>:</td><td>???</td></tr>`)}
+              ${mn(data[i]['Vickers hardness'], `<tr><td>− Độ cứng theo thang Vickers</td><td>:</td><td>??? MPa</td></tr>`)}
+              ${mn(data[i]['Brinell hardness'], `<tr><td>− Độ cứng theo thang Brinell</td><td>:</td><td>??? MPa</td></tr>`)}
+              <tr><td>− Số đăng kí CAS</td><td>:</td><td>${data[i]['CAS number']}</td></tr>
+            </table>
+          </div>
+          <div class=card>
+            <h3>Lịch sử</h3>
+            <table cellpadding=10 width=100%>
+              ${mn(data[i].naming, `<tr><td>− Đặt tên theo</td><td>:</td><td>${data[i].naming}</td></tr>`)}
+              ${mn(data[i]['predicted by'], `<tr><td>− Dự đoán bởi</td><td>:</td><td>??? (${data[i]['prediction date']})</td></tr>`)}
+              ${mn(data[i]['discovery and first isolation by'], `<tr><td>− Phát hiện và điều chế đầu tiên bởi</td><td>:</td><td>??? (${data[i]['discovery date']})</td></tr>`)}
+              ${mn(data[i]['discovered by'], `<tr><td>− Phát hiện bởi</td><td>:</td><td>??? (${data[i]['discovery date']})</td></tr>`)}
+              ${data[i]['discovery and first isolation by'] === undefined && data[i]['discovered by'] === undefined ? `<tr><td>− Phát hiện</td><td>:</td><td>${data[i]['discovery date']}</td></tr>` : ''}
+              ${mn(data[i]['first isolation by'], `<tr><td>− Điều chế đầu tiên bởi</td><td>:</td><td>??? (${data[i]['first isolation date']})</td></tr>`)}
+              ${mn(data[i]['named by'], `<tr><td>− Đặt tên bởi</td><td>:</td><td>??? (${data[i]['named date']})</td></tr>`)}
+              ${mn(data[i]['history comment label'], `<tr><td>− ???</td><td>:</td><td>${data[i]['history comment']}</td></tr>`)}
+            </table>
+          </div>`
+        } else {
+          result += `
+          <div class=card>
+            <h3>General properties</h3>
+            <table cellpadding=10 width=100%>
+              ${mn(data[i].allotropes, '<tr><td>− Allotropes</td><td>:</td><td>???</td></tr>')}
+              ${mn(data[i].appearance, '<tr><td>− Appearance</td><td>:</td><td>???</td></tr>')}
+              <tr><td>− Atomic mass</td><td>:</td><td>${data[i]['atomic mass']} g/mol</td></tr>
+            </table> 
+          </div>
+          <div class=card>
+            <h3><span style="text-transform: capitalize">${data[i].name}</span> in the periodic table</h3>
+            <table cellpadding=10 width=100%>
+              <tr><td>− Atomic number (Z)</td><td>:</td><td>${data[i].number}</td></tr>
+              <tr><td>− Group</td><td>:</td><td>${data[i].group}</td></tr>
+              <tr><td>− Period</td><td>:</td><td>${data[i].period}</td></tr>
+              <tr><td>− Block</td><td>:</td><td>${data[i].block}−block</td></tr>
+              <tr><td>− Element category</td><td>:</td><td>${data[i].category}</td></tr>
+              <tr><td>− Electron configuration</td><td>:</td><td>${data[i]['electron configuration'].replace(/(\d+)(?![a-z])/g, '<sup>$1</sup>')}</td></tr>
+              <tr><td>− Electrons per shell</td><td>:</td><td>${data[i]['electrons per shell']}</td></tr>
+            </table>
+          </div>
+          <div class=card>
+            <h3>Physical properties</h3>
+            <table cellpadding=10 width=100%>
+              <tr><td>− Phase at STP</td><td>:</td><td>${data[i].phase}</td></tr>
+              ${mn(data[i]['melting point K'], `<tr><td>− Melting point</td><td>:</td><td>??? K (${data[i]['melting point C']} °C, ${data[i]['melting point F']} °F)</td></tr>`)}
+              ${mn(data[i]['boiling point K'], `<tr><td>− Boiling point</td><td>:</td><td>??? K (${data[i]['boiling point C']} °C, ${data[i]['boiling point F']} °F)</td></tr>`)}
+              <tr><td>− Density</td><td>:</td><td>
+                ${mn(data[i]['density gplstp'], `??? g/l (at STP)`)}
+                ${mn(data[i]['density gpcm3nrt'], `<br />??? g/cm<sup>3</sup> (near r.t.)`)}
+                ${mn(data[i]['density gpcm3mp'], `<br />??? g/cm<sup>3</sup> (at m.p.)`)}
+                ${mn(data[i]['density gpcm3bp'], `<br />??? g/cm<sup>3</sup> (at b.p.)`)}
+              </td></tr>
+              ${mn(data[i]['triple point K'], `<tr><td>− Triple point</td><td>:</td><td>??? K, ${data[i]['triple point kPa']} kPa</td></tr>`)}
+              ${mn(data[i]['critical point K'], `<tr><td>− Critical point</td><td>:</td><td>??? K, ${data[i]['critical point MPa']} MPa</td></tr>`)}
+              ${mn(data[i]['heat fusion'], `<tr><td>− Heat of fusion</td><td>:</td><td>??? kJ/mol</td></tr>`)}
+              ${mn(data[i]['heat vaporization'], `<tr><td>− Heat of vaporization</td><td>:</td><td>??? kJ/mol</td></tr>`)}
+              ${mn(data[i]['heat capacity'], `<tr><td>− Molar heat capacity</td><td>:</td><td>??? J/(mol·K)</td></tr>`)}
+            </table>
+            ${ck(va) ? `
+              <h4 align=center>Vapor pressure</h4>
+              <div class=overflow-nowrap>
+                <table border=1 cellpadding=10 cellspacing=0 width=100%>
+                  <tr align=center><td>P (Pa)</td><td>1</td><td>10</td><td>100</td><td>1 k</td><td>10 k</td><td>100 k</td></tr>
+                  <tr align=center><td>at T (K)</td><td>${hg(va[0])}</td><td>${hg(va[1])}</td><td>${hg(va[2])}</td><td>${hg(va[3])}</td><td>${hg(va[4])}</td><td>${hg(va[5])}</td></tr>
+                </table>
+              </div>
+            ` : ''}
+          </div>
+          <div class=card>
+            <h3>Atomic properties</h3>
+            <table cellpadding=10 width=100%>
+              ${mn(data[i]['oxidation states']), `<tr><td>− Oxidation states</td><td>:</td><td>${data[i]['oxidation states']}${mn(data[i]['oxidation states comment'], '<br />???')}</td></tr>`}
+              ${mn(data[i].electronegativity, `<tr><td>− Electronegativity</td><td>:</td><td>Pauling scale ???</td></tr>`)}
+              <tr><td>− Ionization energies</td><td>:</td><td>
+                ${mn(data[i]['ionization energy 1'], `1st ??? kJ/mol`)}
+                ${mn(data[i]['ionization energy 2'], `<br /> 2nd ??? kJ/mol`)}
+                ${mn(data[i]['ionization energy 3'], `<br /> 3rd ??? kJ/mol`)}
+              </td></tr>
+              ${mn(data[i]['atomic radius'], `<tr><td>− Atomic radius</td><td>:</td><td>empirical ??? pm</td></tr>`)}
+              ${mn(data[i]['covalent radius'], `<tr><td>− Covalent radius</td><td>:</td><td>??? pm</td></tr>`)}
+              ${mn(data[i]['Van der Waals radius'], `<tr><td>− Van der Waals radius</td><td>:</td><td>??? pm</td></tr>`)}
+            </table>
+            ${i < 98 ? `<img src="../img/elements/element_spec_${data[i].symbol}.jpg" width=100% /><p align=center>Spectral lines of ${data[i].name}</p>` : ''}
+          </div>
+          <div class=card>
+            <h3>Other properties</h3>
+            <table cellpadding=10 width=100%>
+              ${mn(data[i]['crystal structure'], `<tr><td>− Crystal structure</td><td>:</td><td>??? <br /><img src="../img/elements/${data[i]['crystal structure'].replace(/ /g, '_')}.png" width=100px/></td></tr>`)}
+              <tr><td>− Speed of sound</td><td>:</td><td>
+                ${mn(data[i]['speed of sound'], `??? m/s ${data[i]['speed of sound comment']}`)}
+                ${mn(data[i]['speed of sound rod at 20'], `??? m/s (thin rod, at 20 °C)`)}
+                ${mn(data[i]['speed of sound rod at r.t.'], `??? m/s (thin rod, at r.t.)`)}
+              </td></tr>
+              ${mn(data[i]['thermal expansion'], `<tr><td>− Thermal expansion</td><td>:</td><td>??? µm/(m·K)</td></tr>`)}
+              ${mn(data[i]['thermal expansion at 25'], `<tr><td>− Thermal expansion</td><td>:</td><td>??? µm/(m·K) (at 25 °C)</td></tr>`)}
+              ${mn(data[i]['thermal conductivity'], `<tr><td>− Thermal conductivity</td><td>:</td><td>??? W/(m·K)</td></tr>`)}
+              ${mn(up, `<tr><td>− Electrical resistivity</td><td>:</td><td>${mn(data[i]['electrical resistivity'], `??? ${up}Ω·m`)}${mn(data[i]['electrical resistivity at 0'], `??? ${up}Ω·m (at 0 °C)`)}${mn(data[i]['electrical resistivity at 20'], `??? ${up}Ω·m (at 20 °C)`)}`)}
+              ${mn(data[i]['magnetic ordering'], `<tr><td>− Magnetic ordering</td><td>:</td><td>???</td></tr>`)}
+              ${mn(data[i]['magnetic susceptibility'], `<tr><td>− Magnetic susceptibility</td><td>:</td><td>??? cm<sup>3</sup>/mol </td></tr>`)}
+              ${mn(data[i]['Youngs modulus'], `<tr><td>− Young's modulus</td><td>:</td><td>??? GPa</td></tr>`)}
+              ${mn(data[i]['Shear modulus'], `<tr><td>− Shear modulus</td><td>:</td><td>??? GPa</td></tr>`)}
+              ${mn(data[i]['Bulk modulus'], `<tr><td>− Bulk modulus</td><td>:</td><td>??? GPa</td></tr>`)}
+              ${mn(data[i]['Poisson ratio'], `<tr><td>− Poisson ratio</td><td>:</td><td>???</td></tr>`)}
+              ${mn(data[i]['Mohs hardness'], `<tr><td>− Mohs hardness</td><td>:</td><td>???</td></tr>`)}
+              ${mn(data[i]['Vickers hardness'], `<tr><td>− Vickers hardness</td><td>:</td><td>??? MPa</td></tr>`)}
+              ${mn(data[i]['Brinell hardness'], `<tr><td>− Brinell hardness</td><td>:</td><td>??? MPa</td></tr>`)}
+              <tr><td>− CAS number</td><td>:</td><td>${data[i]['CAS number']}</td></tr>
+            </table>
+          </div>
+          <div class=card>
+            <h3>History</h3>
+            <table cellpadding=10 width=100%>
+              ${mn(data[i].naming, `<tr><td>− Naming after</td><td>:</td><td>???</td></tr>`)}
+              ${mn(data[i]['predicted by'], `<tr><td>− Predicted by</td><td>:</td><td>??? (${data[i]['prediction date']})</td></tr>`)}
+              ${mn(data[i]['discovery and first isolation by'], `<tr><td>− Discovery and first isolation by</td><td>:</td><td>??? (${data[i]['discovery date']})</td></tr>`)}
+              ${mn(data[i]['discovered by'], `<tr><td>− Discovered by</td><td>:</td><td>??? (${data[i]['discovery date']})</td></tr>`)}
+              ${data[i]['discovery and first isolation by'] === undefined && data[i]['discovered by'] === undefined ? `<tr><td>− Discovery</td><td>:</td><td>${data[i]['discovery date']}</td></tr>` : ''}
+              ${mn(data[i]['first isolation by'], `<tr><td>− First isolation by</td><td>:</td><td>??? (${data[i]['first isolation date']})</td></tr>`)}
+              ${mn(data[i]['named by'], `<tr><td>− Named by</td><td>:</td><td>??? (${data[i]['named date']})</td></tr>`)}
+              ${mn(data[i]['history comment label'], `<tr><td>− ???</td><td>:</td><td>${data[i]['history comment']}</td></tr>`)}
+            </table>
+          </div>`
+        }
+        wl = LN === 'vi' ? `http://vi.wikipedia.org/wiki/${data[i].name.replace(' ', '_')}` : `http://en.wikipedia.org/wiki/${data[i].name}`;
+        break;
+      }
+    }
+    output.innerHTML = result;
+    wiki.onclick = function() {
+      window.open(wl, '_system')
+    }
+  })
+  </script>
+</div>
