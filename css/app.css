@@ -561,7 +561,7 @@ button.ui-btn:active {
 #reactivity_series .value td:after {
   content: "|";
   position: relative;
-  top: -27px;
+  top: -24px;
   left: -30px
 }
 
@@ -572,4 +572,8 @@ button.ui-btn:active {
 
 .ui-selectmenu .ui-selectmenu-list li .ui-btn.ui-btn-active {
   color: #e91e63
+}
+
+.main-row {
+  margin: 4px -4px
 }
