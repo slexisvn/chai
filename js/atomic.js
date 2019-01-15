@@ -4,7 +4,7 @@ if (LN === 'vi') {
   input.placeholder = 'bạc, Ag';
 }
 $.getJSON('../data/atomic.json', function(data) {
-  cal.onclick = function() {
+  document.getElementsByTagName('button')[0].onclick = function() {
     let atomic = input.value;
     let result = '';
     for (let x in data) {
@@ -70,6 +70,6 @@ $.getJSON('../data/atomic.json', function(data) {
         }
       }
     }
-    output.innerHTML = result;
+    osearch.innerHTML = result;
   }
 })

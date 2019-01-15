@@ -59,10 +59,12 @@ p {
   word-spacing: 5px
 }
 
-#output,
-.navbar,
-input {
+#osearch, #ocalc, .navbar, input {
   font-size: 20px
+}
+
+#ocalc {
+  text-align: center;
 }
 
 label {
@@ -555,19 +557,22 @@ button.ui-btn:active {
 #reactivity_series .value td {
   border-top: 2px solid #fff;
   padding-right: 30px;
-  padding-top: 10px
+  padding-top: 10px;
+  font-size: 18px;
 }
 
 #reactivity_series .value td:after {
   content: "|";
   position: relative;
   top: -24px;
-  left: -30px
+  left: -25px
 }
 
 #reactivity_series .element td {
   padding-right: 30px;
-  padding-bottom: 10px
+  padding-bottom: 10px;
+  font-size: 18px;
+  white-space: nowrap;
 }
 
 .ui-selectmenu .ui-selectmenu-list li .ui-btn.ui-btn-active {

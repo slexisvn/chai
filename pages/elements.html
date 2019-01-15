@@ -10,7 +10,7 @@
       </div>
     </div>
   </div>
-  <div class="ui-content" id="output"></div>
+  <div class="ui-content" id="info_element"></div>
   <script>
   $.getJSON(LN === 'vi' ? '../data/elements-vi.json' : '../data/elements-en.json', function(data) {
     let wl = '';
@@ -245,7 +245,7 @@
         break;
       }
     }
-    output.innerHTML = result;
+    info_element.innerHTML = result;
     wiki.onclick = function() {
       window.open(wl, '_system')
     }

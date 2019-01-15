@@ -53,7 +53,8 @@
   width: 70px;
   text-align: center;
   border: 1px solid #808080;
-  line-height: 50px
+  line-height: 50px;
+  font-size: 18px;
 }
 
 .trow {
@@ -84,7 +85,7 @@
 
 .rest-columns>.thead>span {
   margin-right: 50px;
-  margin-left: -50px
+  margin-left: -50px;
 }
 
 .rest-columns>.thead>:first-child {

@@ -1,6 +1,7 @@
 if (LN === 'vi') {
   document.getElementsByClassName('title')[1].innerHTML = 'Tính khối lượng mol';
   document.getElementsByTagName('label')[0].innerHTML = 'Công thức';
+  document.getElementsByTagName('button')[0].innerHTML = 'tính';
 }
 
 atom = {
@@ -202,10 +203,10 @@ function calculate(formula) {
     i++
   }
   weight = rounded(total[0], percision);
-  let result = `<p align='center'>${formula.replace(/(\d+)/g, '<sub>$1</sub>')} = ${weight} g/mol</p><p>${LN === 'vi' ? 'Trong đó' : 'Of which'}</p><ul>`;
+  let result = `<p align='center'>${formula.replace(/(\d+)/g, '<sub>$1</sub>')} = ${weight} g/mol</p><ul>`;
   for (ele in elmass[0]) {
     eltotal = eval(elmass[0][ele] * atom[ele]);
-    result += `<li>${ele} ${LN === 'vi' ? 'chiếm' : 'accounts for'} ${rounded(eltotal / total[0] * 100, percision)}%</li>`
+    result += `<li>%${ele} = ${rounded(eltotal / total[0] * 100, percision)}%</li>`
   }
   return `${result}</ul>`
 }
@@ -214,6 +215,7 @@ function rounded(number, percision) {
   return Math.round(number * (10 ** percision)) / (10 ** percision)
 }
 
-cal.onclick = function() {
-  output.innerHTML = calculate(input.value)
+document.getElementsByTagName('button')[0].onclick = function() {
+  ocalc.innerHTML = calculate(input.value);
+  return false
 }

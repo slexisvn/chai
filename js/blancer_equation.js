@@ -205,7 +205,7 @@ function Term(items, charge) {
   this.toHtml = function() {
     var node = document.createElement("span");
     if (items.length == 0 && charge == -1) {
-      appendText("e^{" + MINUS + "}", node)
+      appendText(`e<sup>${MINUS}</sup>`, node)
     } else {
       items.forEach(function(item) {
         node.appendChild(item.toHtml())
@@ -216,7 +216,7 @@ function Term(items, charge) {
         else s = Math.abs(charge).toString();
         if (charge > 0) s += "+";
         else s += MINUS;
-        appendText("^{" + s + "}", node)
+        appendText(`<sup>${s}</sup>`, node)
       }
     }
     return node
@@ -253,7 +253,7 @@ function Group(items, count) {
     });
     appendText(")", node);
     if (count != 1) {
-      appendText("_{" + count.toString() + "}", node)
+      appendText(`<sub>${count.toString()}</sub>`, node)
     }
     return node
   }
@@ -278,7 +278,7 @@ function Element(name, count) {
     var node = document.createElement("span");
     appendText(name, node);
     if (count != 1) {
-      appendText("_{" + count.toString() + "}", node)
+      appendText(`<sub>${count.toString()}</sub>`, node)
     }
     return node
   }
@@ -654,7 +654,7 @@ function gcd(x, y) {
   return x
 }
 var MINUS = "-";
-var RIGHT_ARROW = "\\longrightarrow";
+var RIGHT_ARROW = "⟶";
 Array.prototype.clone = Array.prototype.slice;
 
 function setMessage(str) {
@@ -675,13 +675,10 @@ function appendText(text, node) {
 if (LN === 'vi') {
   document.getElementsByClassName('title')[1].innerHTML = 'Cân bằng phương trình';
   document.getElementsByTagName('label')[0].innerHTML = 'Phương trình';
+  document.getElementsByTagName('button')[0].innerHTML = 'cân bằng'
 }
 
-$.getScript("../js/katex.js", function() {
-  cal.onclick = function() {
-    output.innerHTML = katex.renderToString(balance(input.value), {
-      displayMode: true
-    });
-    return false;
-  }
-})
+document.getElementsByTagName('button')[0].onclick = function() {
+  ocalc.innerHTML = balance(input.value)
+  return false;
+}

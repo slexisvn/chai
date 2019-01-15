@@ -3,15 +3,15 @@ if (LN === 'vi') {
   let lb = document.getElementsByTagName('label');
   lb[0].innerHTML = 'Chất tham gia';
   lb[1].innerHTML = 'Sản phẩm';
-  cal.innerHTML = 'Tìm kiếm';
+  document.getElementsByTagName('button')[0].innerHTML = 'Tìm kiếm';
 }
 
 function sub(str) {
   return str.replace(/(\d+)/g, '<sub>$1</sub>').replace(/(^|\+|=)<sub>(\d+)<\/sub>/g, '$1$2');
 }
 
-$.getJSON("../data/equations.json", function(data) {
-  cal.onclick = function() {
+$.getJSON('../data/equations.json', function(data) {
+  document.getElementsByTagName('button')[0].onclick = function() {
     let R = r.value;
     let P = p.value;
     if (R !== '' || P !== '') {
@@ -103,7 +103,7 @@ $.getJSON("../data/equations.json", function(data) {
           break
         }
       }
-      output.innerHTML = result;
+      osearch.innerHTML = result;
     }
   }
 })
