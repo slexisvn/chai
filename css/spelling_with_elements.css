@@ -4,24 +4,13 @@
   margin: 0;
 }
 
-.float-center {
-  float: right;
-  position: relative;
-  left: -50%;
-}
-
-.float-center > .main {
-  position: relative;
-  left: 50%;
-}
-
 .main li {
+  display: inline-block;
   list-style: none;
   width: 106px;
   height: 110px;
   position: relative;
   font-size: 36px;
-  float: left;
   padding: 0 4px;
   margin: 2px;
   padding-top: 40px;

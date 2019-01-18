@@ -203,7 +203,7 @@ function calculate(formula) {
     i++
   }
   weight = rounded(total[0], percision);
-  let result = `<p align='center'>${formula.replace(/(\d+)/g, '<sub>$1</sub>')} = ${weight} g/mol</p><ul>`;
+  let result = `<span>${formula.replace(/(\d+)/g, '<sub>$1</sub>')} = ${weight} g/mol</span><ul>`;
   for (ele in elmass[0]) {
     eltotal = eval(elmass[0][ele] * atom[ele]);
     result += `<li>%${ele} = ${rounded(eltotal / total[0] * 100, percision)}%</li>`
