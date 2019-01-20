@@ -9,8 +9,7 @@ if (LN === 'vi') {
     censp[i].innerHTML = _vi[i];
   }
   atg[0].href = 'pages/doc-vi.html';
-  atg[1].href = 'pages/about-vi.html';
-  atg[6].href = 'pages/periodic_table-vi.html';
+  atg[5].href = 'pages/periodic_table-vi.html';
 }
 
 $('#reactivity_series_btn').click(function() {
